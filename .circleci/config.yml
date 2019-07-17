@@ -6,6 +6,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
+          BUNDLER_VERSION: 2.0.1
           PGHOST: localhost
           PGUSER: fast_tracks
           RAILS_ENV: test
