@@ -30,6 +30,7 @@ jobs:
           command: |
             gem update --system
             gem install bundler
+            bundle install
 
       # Cache Dependencies
       # - type: cache-save
