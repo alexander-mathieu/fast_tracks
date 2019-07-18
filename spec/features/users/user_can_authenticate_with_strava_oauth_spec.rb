@@ -18,12 +18,16 @@ RSpec.describe 'As a visitor' do
           provider: 'strava',
           credentials: { token: ENV['STRAVA_TEST_TOKEN'] }
         })
+        user = User.create!(strava_uid: 3214,
+                            strava_firstname: 'William',
+                            strava_lastname: 'Homer',
+                            strava_token: ENV['STRAVA_TEST_TOKEN'])
 
         visit root_path
         click_button 'Login with Strava'
 
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content(user.name)
+        expect(page).to have_content(user.strava_firstname)
       end
     end
   end
