@@ -1,22 +1,22 @@
 class LoginController < ApplicationController
-  def new
+  def create
     auth = request.env['omniauth.auth']
     token = auth['credentials']['token']
-    temp = get_strava_info(token)
+    user_info = StravaService.new(token).get_user_info
+    create_user(user_info, token)
+
     redirect_to dashboard_path
   end
 
   private
 
-  def get_strava_info(token)
-    response = conn.get do |req|
-      req.url 'https://www.strava.com/api/v3/athlete'
-      req.params['access_token'] = token
+  def create_user(user_info, token)
+    user = User.find_or_create_by(strava_uid: user_info[:id])
+    if user 
+      session[:user_id] = user.id
+      user.update(strava_firstname: user_info[:firstname],
+                  strava_lastname: user_info[:lastname],
+                  strava_token: token)
     end
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
-  def conn
-    Faraday.new
   end
 end
