@@ -45,8 +45,11 @@ group :development, :test do
   gem 'simplecov'
   gem 'capybara'
   gem 'launchy'
+  gem 'webmock'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
   gem 'pry'
+  gem 'vcr'
 end
 
 group :development do
