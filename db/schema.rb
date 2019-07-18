@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2019_07_18_003840) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "strava_uid"
+    t.integer "strava_uid"
     t.string "strava_name"
     t.string "strava_token"
-    t.integer "spotify_uid"
+    t.string "spotify_uid"
     t.string "spotify_token"
   end
 
