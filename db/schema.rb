@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 2019_07_18_003840) do
 
   create_table "users", force: :cascade do |t|
     t.integer "strava_uid"
-    t.string "strava_name"
+    t.string "strava_firstname"
+    t.string "strava_lastname"
     t.string "strava_token"
     t.string "spotify_uid"
     t.string "spotify_token"
