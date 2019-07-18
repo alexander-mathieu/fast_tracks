@@ -250,14 +250,9 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   factory_bot_rails
-<<<<<<< HEAD
   faker
   faraday (~> 0.15.4)
   figaro (~> 1.1)
-=======
-  faraday
-  figaro
->>>>>>> rs_oauth_spike
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)
