@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_07_18_003840) do
+=======
+ActiveRecord::Schema.define(version: 0) do
+>>>>>>> rs_oauth_spike
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.integer "strava_uid"
     t.string "strava_firstname"
@@ -24,4 +29,6 @@ ActiveRecord::Schema.define(version: 2019_07_18_003840) do
     t.string "spotify_token"
   end
 
+=======
+>>>>>>> rs_oauth_spike
 end
