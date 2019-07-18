@@ -14,14 +14,16 @@ RSpec.describe 'As a visitor' do
       it 'I complete the Strava OAuth process and redirect to my dashboard' do
         OmniAuth.config.test_mode = true
 
-        OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
+        OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new(
           provider: 'strava',
-          credentials: { token: ENV['STRAVA_TEST_TOKEN'] }
-        })
+          credentials: { token: ENV['STRAVA_TEST_TOKEN'] })
+
         user = User.create!(strava_uid: 3214,
                             strava_firstname: 'William',
                             strava_lastname: 'Homer',
                             strava_token: ENV['STRAVA_TEST_TOKEN'])
+
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
         visit root_path
         click_button 'Login with Strava'

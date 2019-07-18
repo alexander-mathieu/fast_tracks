@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StravaService
   def initialize(user_token)
     @user_token = user_token
@@ -20,4 +22,5 @@ class StravaService
       f.adapter Faraday.default_adapter
     end
   end
+
 end
