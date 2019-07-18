@@ -24,7 +24,6 @@ RSpec.describe 'As a visitor' do
         end
 
         user = User.last
-
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_content(user.strava_firstname)
       end
