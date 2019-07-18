@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LoginController < ApplicationController
   def create
     auth = request.env['omniauth.auth']
@@ -12,7 +14,7 @@ class LoginController < ApplicationController
 
   def create_user(user_info, token)
     user = User.find_or_create_by(strava_uid: user_info[:id])
-    if user 
+    if user
       session[:user_id] = user.id
       user.update(strava_firstname: user_info[:firstname],
                   strava_lastname: user_info[:lastname],
