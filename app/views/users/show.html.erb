@@ -1,1 +1,4 @@
 <h1> <%= current_user.strava_firstname %> </h1>
+
+<%= link_to "Connect to Spotify",
+"https://accounts.spotify.com/authorize?client_id=#{ENV['SPOTIFY_CLIENT_ID']}&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback" %>
