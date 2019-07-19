@@ -7,7 +7,7 @@ class User < ApplicationRecord
   def top_songs(limit)
     songs
       .joins(:user_songs)
-      .select("songs.*, user_songs.play_count, user_songs.power_ranking")
+      .select('songs.*, user_songs.play_count, user_songs.power_ranking')
       .order(power_ranking: :DESC)
       .limit(limit)
   end
