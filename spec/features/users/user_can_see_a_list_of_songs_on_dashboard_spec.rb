@@ -20,6 +20,7 @@ RSpec.describe 'As a user who has connected their Spotify account' do
       expect(page).to have_content(@user.strava_firstname)
 
       within '.top-songs' do
+        expect(page).to have_selector('.song', count: 10)
         within first(".song") do
           expect(page).to have_css('.song-rank')
           expect(page).to have_css('.song-title a')
