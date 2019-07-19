@@ -1,4 +1,4 @@
-# frozen_8string_literal: true
+# frozen_string_literal: true
 
 class StravaService
   def initialize(user_token)
