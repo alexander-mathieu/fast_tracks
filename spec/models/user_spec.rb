@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it {should have_many(:songs)}
+  it { should have_many(:songs) }
 
   it '.top_songs by limit' do
     user = create(:user)
