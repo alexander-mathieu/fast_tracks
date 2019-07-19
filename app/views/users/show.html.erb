@@ -1,1 +1,15 @@
 <h1> <%= current_user.strava_firstname %> </h1>
+
+<section class="top-songs">
+  <% facade.top_songs.each do |song| %>
+    <div class="song">
+      <ul>
+        <li class="song-power-index"><%= song.power_ranking %></li>
+        <li class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></li>
+        <li class="song-artist"><%= song.artist %></li>
+        <li class="song-play-count"><%= song.play_count %></li>
+        <li class="song-last-played"><%= song.updated_at %></li>
+      </ul>
+    </div>
+  <% end %>
+</section>
