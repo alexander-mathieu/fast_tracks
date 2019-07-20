@@ -9,6 +9,10 @@ class StravaService
     get_json('athlete')
   end
 
+  def get_user_activities
+    get_json('activities')
+  end
+
   private
 
   def get_json(url, params = {})

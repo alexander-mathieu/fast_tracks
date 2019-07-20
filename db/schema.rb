@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_031422) do
+ActiveRecord::Schema.define(version: 2019_07_20_205828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.bigint "strava_id"
+    t.bigint "user_id"
+    t.string "name"
+    t.float "distance"
+    t.float "moving_time"
+    t.float "elapsed_time"
+    t.float "total_elevation_gain"
+    t.string "activity_type"
+    t.datetime "start_date"
+    t.datetime "start_date_local"
+    t.string "start_latlng"
+    t.string "end_latlng"
+    t.float "average_speed"
+    t.float "max_speed"
+    t.integer "pr_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
 
   create_table "songs", force: :cascade do |t|
     t.string "spotify_id"
@@ -46,7 +67,8 @@ ActiveRecord::Schema.define(version: 2019_07_19_031422) do
     t.string "spotify_uid"
     t.string "spotify_token"
   end
-  
+
+  add_foreign_key "activities", "users"
   add_foreign_key "user_songs", "songs"
   add_foreign_key "user_songs", "users"
 end

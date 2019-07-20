@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it { should have_many(:songs) }
+  it { should have_many(:activities) }
 
   it '.top_songs by limit' do
     user = create(:user)
@@ -28,5 +29,13 @@ RSpec.describe User, type: :model do
     expect(result.length).to eq(song_1.length)
     expect(result.play_count).to eq(user_song_1.play_count)
     expect(result.power_ranking).to eq(user_song_1.power_ranking)
+  end
+
+  it '.last_activity_id' do
+    user = create(:user)
+    activity_1 = create(:activity, strava_id: 123123, user_id: user.id)
+    activity_2 = create(:activity, strava_id: 123121, user_id: user.id)
+
+    expect(user.last_activity_id).to eq(activity_1.strava_id)
   end
 end
