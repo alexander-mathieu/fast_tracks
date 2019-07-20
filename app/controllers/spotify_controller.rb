@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
+# controller for Spotify oauth sessions
 class SpotifyController < ApplicationController
   def create
- 	client_id     = ENV['SPOTIFY_CLIENT_ID'] 
-  	client_secret = ENV['SPOTIFY_CLIENT_SECRET']  
-  	code          = params[:code]
-	redirect_uri 	= "http://localhost:3000/auth/spotify/callback"
-  	response      = Faraday.post("https://accounts.spotify.com/api/token?grant_type=authorization_code&client_id=#{client_id}&client_secret=#{client_secret}&code=#{code}&redirect_uri=#{redirect_uri}")
-	redirect_to root_path
+    token_info = SpotifyOauthGenerator.new(params['code']).connect_to_spotify
+    current_user.spotify_token = token_info['refresh_token']
+    current_user.save
+    redirect_to root_path
   end
 end
