@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+# Prepares data for user dashboard show view
 class DashboardShowFacade
   attr_reader :top_songs
 
   def initialize(current_user)
     @top_songs = current_user.top_songs(10)
-		@user = current_user
+    @user = current_user
   end
 
   def build_link
@@ -16,7 +17,7 @@ class DashboardShowFacade
     link + client_pair + code_pair + redirect_pair
   end
 
-	def user_name
-		@user.strava_firstname + " " + @user.strava_lastname
-	end
+  def user_name
+    @user.strava_firstname + ' ' + @user.strava_lastname
+  end
 end
