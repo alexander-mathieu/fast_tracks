@@ -6,6 +6,7 @@ RSpec.describe 'As a visitor' do
   describe 'when I visit the root path' do
     it "I see a button to 'Login with Strava'" do
       visit root_path
+      require 'pry'; binding.pry
 
       expect(page).to have_button('Login with Strava')
     end

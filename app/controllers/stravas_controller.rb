@@ -38,4 +38,5 @@ class StravasController < ApplicationController
       }
     end
   end
+  
 end

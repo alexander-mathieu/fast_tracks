@@ -22,4 +22,5 @@ RSpec.describe 'As a user who has connected their Spotify account' do
       expect(page).to have_content('Strava data synced')
     end
   end
+  
 end
