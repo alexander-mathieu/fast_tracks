@@ -1,7 +1,6 @@
 <h1> <%= facade.user_name %> </h1>
 <h2>Welcome to Fast Tracks</h2>
 
-
 <% if current_user.spotify_token.nil? %>
 	<%= link_to "Connect to Spotify",	facade.build_link, id: "spot-conn-link" %>
 <% end %>
@@ -10,6 +9,8 @@
 <% if current_user.spotify_token.nil? %>
 	<%= link_to "Connect to Spotify",	facade.build_link %>
 <% end %>
+
+<%= button_to "Sync My Strava Data", stravas_path %>
 
 <section class="top-songs">
   <% facade.top_songs.each do |song| %>
