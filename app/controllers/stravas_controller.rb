@@ -21,22 +21,22 @@ class StravasController < ApplicationController
   def map_activies(activities)
     activities.each_with_object([]) do |activity, array|
       array << {
-        :name => activity[:name],
-        :distance => activity[:distance],
-        :moving_time => activity[:moving_time],
-        :elapsed_time => activity[:elapsed_time],
-        :total_elevation_gain => activity[:total_elevation_gain],
-        :activity_type => activity[:type],
-        :strava_id => activity[:id],
-        :start_date => activity[:start_date],
-        :start_date_local => activity[:start_date_local],
-        :start_latlng => activity[:start_latlng],
-        :end_latlng => activity[:end_latlng],
-        :average_speed => activity[:average_speed],
-        :max_speed => activity[:max_speed],
-        :pr_count => activity[:pr_count]
+        name: activity[:name],
+        distance: activity[:distance],
+        moving_time: activity[:moving_time],
+        elapsed_time: activity[:elapsed_time],
+        total_elevation_gain: activity[:total_elevation_gain],
+        activity_type: activity[:type],
+        strava_id: activity[:id],
+        start_date: activity[:start_date],
+        start_date_local: activity[:start_date_local],
+        start_latlng: activity[:start_latlng],
+        end_latlng: activity[:end_latlng],
+        average_speed: activity[:average_speed],
+        max_speed: activity[:max_speed],
+        pr_count: activity[:pr_count]
       }
     end
   end
-  
+
 end
