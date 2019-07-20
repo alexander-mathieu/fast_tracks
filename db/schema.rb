@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_031422) do
     t.string "spotify_uid"
     t.string "spotify_token"
   end
-
+  
   add_foreign_key "user_songs", "songs"
   add_foreign_key "user_songs", "users"
 end

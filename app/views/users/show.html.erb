@@ -1,4 +1,9 @@
-<h1> <%= current_user.strava_firstname %> </h1>
+<h1> <%= facade.user_name %> </h1>
+
+
+<% if current_user.spotify_token.nil? %>
+	<%= link_to "Connect to Spotify",	facade.build_link, id: "spot-conn-link" %>
+<% end %>
 
 <section class="top-songs">
   <% facade.top_songs.each do |song| %>

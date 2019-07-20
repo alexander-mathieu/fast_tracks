@@ -7,11 +7,13 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore all logfiles and tempfiles.
+# Ignore all logfiles, swapfiles, and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.swp
+*.swo
 
 # Ignore uploaded files in development
 /storage/*

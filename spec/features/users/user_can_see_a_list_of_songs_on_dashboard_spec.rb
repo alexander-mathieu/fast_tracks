@@ -24,7 +24,7 @@ RSpec.describe 'As a user who has connected their Spotify account' do
       visit dashboard_path
       
       expect(page).to have_content(@user.strava_firstname)
-      save_and_open_page
+
       within '.top-songs' do
         expect(page).to have_selector('.song', count: 10)
         within first('.song') do
