@@ -13,10 +13,9 @@ describe 'as a user on the dashboard path' do
         visit dashboard_path
       end
 
-      expect(page).to have_selector('#spot-conn-link')
       expect(page).to have_link('Connect to Spotify')
       expect(page).to have_content(name)
-      expect(page).to have_content('Welcome to Fast Tracks')
+      expect(page).to have_content('Welcome to FastTracks')
     end
   end
 

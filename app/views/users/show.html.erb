@@ -1,38 +1,61 @@
-<h1> <%= facade.user_name %> </h1>
-<h2>Welcome to Fast Tracks</h2>
+<section class="row">
+  <%# <div class="col-md-2"></div> %>
+  <div class="col-lg-12">
+    <section class="py-md-3">
+      <h1> <%= facade.user_name %>, Welcome to FastTracks </h1>
+    </section>
+    <section>
+      <% if current_user.spotify_token.nil? %>
+        <p>Please <%= link_to "Connect to Spotify",	facade.build_link %>
+         to get the full benefits of FastTracks.</p>
+      <% end %>
+    </section>
 
-<% if current_user.spotify_token.nil? %>
-	<%= link_to "Connect to Spotify",	facade.build_link, id: "spot-conn-link" %>
-<% end %>
+    <section>
+      <%= button_to "Sync My Strava Data", stravas_path, class: "btn btn-success" %>
+    </section>
+    <div class="row">
+      <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
+        <h3>Top Songs</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Power Ranking</th>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Play Count</th>
+              <th>Last Played</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% facade.top_songs.each do |song| %>
+              <div class="song">
+                <tr>
+                  <th scope="row" class="song-power-index"><%= song.power_ranking %></th>
+                  <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
+                  <td class="song-artist"><%= song.artist %></td>
+                  <td class="song-play-count"><%= song.play_count %></td>
+                  <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
+                </tr>
+              </div>
+            <% end %>
+          </tbody>
+        </table>
+      </section>
 
-
-<% if current_user.spotify_token.nil? %>
-	<%= link_to "Connect to Spotify",	facade.build_link %>
-<% end %>
-
-<%= button_to "Sync My Strava Data", stravas_path %>
-
-<section class="top-songs">
-  <% facade.top_songs.each do |song| %>
-    <div class="song">
-      <ul>
-        <li class="song-power-index"><%= song.power_ranking %></li>
-        <li class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></li>
-        <li class="song-artist"><%= song.artist %></li>
-        <li class="song-play-count"><%= song.play_count %></li>
-        <li class="song-last-played"><%= song.updated_at %></li>
-      </ul>
+      <section class="col-lg-4 pt-md-5 pb-md-3">
+        <% if facade.top_songs.length > 4 %>
+          <section class="recommended-songs">
+            <h4>Recommended Songs</h4>
+            <% facade.recommended_songs.each do |song| %>
+              <div class="song">
+                <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              </div>
+            <% end %>
+          </section>
+        <% end %>
+      </section>
     </div>
-  <% end %>
+  </div>
+  <%# <div class="col-md-2"></div> %>
 </section>
-
-<% if facade.top_songs.length > 4 %>
-  <section class="recommended-songs">
-    <h3>Recommended Songs</h3>
-    <% facade.recommended_songs.each do |song| %>
-      <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      </div>
-    <% end %>
-  </section>
-<% end %>
