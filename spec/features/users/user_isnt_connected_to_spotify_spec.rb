@@ -9,7 +9,9 @@ describe 'as a user on the dashboard path' do
       name = user.strava_firstname + ' ' + user.strava_lastname
       allow_any_instance_of(ApplicationController).to \
         receive(:current_user).and_return(user)
-      visit dashboard_path
+      VCR.use_cassette 'recommended_get_recommendations' do
+        visit dashboard_path
+      end
 
       expect(page).to have_selector('#spot-conn-link')
       expect(page).to have_link('Connect to Spotify')
@@ -24,7 +26,9 @@ describe 'as a user on the dashboard path' do
       name = user.strava_firstname + ' ' + user.strava_lastname
       allow_any_instance_of(ApplicationController).to \
         receive(:current_user).and_return(user)
-      visit dashboard_path
+      VCR.use_cassette 'recommended_get_recommendations' do
+        visit dashboard_path
+      end
 
       expect(page).to_not have_selector('#spot-conn-link')
       expect(page).to_not have_link('Connect to Spotify')

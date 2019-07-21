@@ -10,7 +10,9 @@ RSpec.describe 'As a user who has connected their Spotify account' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
     it 'I should see a button to sync strava data' do
-      visit dashboard_path
+      VCR.use_cassette 'recommended_get_recommendations' do
+        visit dashboard_path
+      end
 
       expect(page).to have_button('Sync My Strava Data')
 
