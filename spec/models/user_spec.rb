@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
     expect(result.spotify_url).to eq(song_1.spotify_url)
     expect(result.album_art_url).to eq(song_1.album_art_url)
     expect(result.length).to eq(song_1.length)
-    expect(result.play_count).to eq(user_song_1.play_count)
+    expect(result.played_at).to eq(user_song_1.played_at)
     expect(result.power_ranking).to eq(user_song_1.power_ranking)
   end
 
@@ -37,5 +37,15 @@ RSpec.describe User, type: :model do
     activity_2 = create(:activity, strava_id: 123121, user_id: user.id)
 
     expect(user.last_activity_id).to eq(activity_1.strava_id)
+  end
+
+  it '.play_count' do
+    user = create(:user)
+    song_1 = create(:song)
+    user_song_1 = create(:user_song, user: user, song: song_1, power_ranking: 7)
+    user_song_2 = create(:user_song, user: user, song: song_1)
+    user_song_3 = create(:user_song, user: user, song: song_1)
+
+    expect(user.play_count(song_1)).to eq(3)
   end
 end
