@@ -18,8 +18,9 @@ class DashboardShowFacade
     link = 'https://accounts.spotify.com/authorize?'
     client_pair = "client_id=#{ENV['SPOTIFY_CLIENT_ID']}&"
     code_pair = 'response_type=code&'
-    redirect_pair = 'redirect_uri=http://localhost:3000/auth/spotify/callback'
-    link + client_pair + code_pair + redirect_pair
+    redirect_pair = 'redirect_uri=http://localhost:3000/auth/spotify/callback&'
+    scope_pair  = 'scope=user-read-recently-played'
+    link + client_pair + code_pair + redirect_pair + scope_pair
   end
 
   def user_name
