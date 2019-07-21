@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :user_song do
     user { nil }
     song { nil }
-    play_count { 1 }
+    sequence(:played_at) { |n| (1563723395108 + n + 50).to_s  }
     power_ranking { 1.5 }
   end
 end
