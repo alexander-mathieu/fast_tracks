@@ -5,6 +5,6 @@ FactoryBot.define do
     user { nil }
     song { nil }
     play_count { 1 }
-    power_ranking { 1.5 }
+    power_ranking { 0.5 }
   end
 end
