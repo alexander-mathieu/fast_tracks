@@ -9,6 +9,11 @@ class DashboardShowFacade
     @user = current_user
   end
 
+  def recommended_songs
+    songs = @user.top_songs(5).map{|song| song.spotify_id}.join(',')
+    RecommendedService.new.get_recommendations(songs)
+  end
+
   def build_link
     link = 'https://accounts.spotify.com/authorize?'
     client_pair = "client_id=#{ENV['SPOTIFY_CLIENT_ID']}&"

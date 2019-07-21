@@ -25,3 +25,14 @@
     </div>
   <% end %>
 </section>
+
+<% if facade.top_songs.length > 4 %>
+  <section class="recommended-songs">
+    <h3>Recommended Songs</h3>
+    <% facade.recommended_songs.each do |song| %>
+      <div class="song">
+        <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    <% end %>
+  </section>
+<% end %>

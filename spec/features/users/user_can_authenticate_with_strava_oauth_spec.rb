@@ -22,10 +22,11 @@ RSpec.describe 'As a visitor' do
         VCR.use_cassette('strava_get_athlete') do
           click_button 'Login with Strava'
         end
-
-        user = User.last
-        expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content(user.strava_firstname)
+        VCR.use_cassette 'recommended_get_recommendations' do
+          user = User.last
+          expect(current_path).to eq(dashboard_path)
+          expect(page).to have_content(user.strava_firstname)
+        end
       end
     end
   end
