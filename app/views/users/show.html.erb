@@ -1,21 +1,24 @@
 <h1> <%= facade.user_name %> </h1>
 <h2>Welcome to Fast Tracks</h2>
 
-
 <% if current_user.spotify_token.nil? %>
 	<%= link_to "Connect to Spotify",	facade.build_link, id: "spot-conn-link" %>
 <% end %>
 
-<section class="top-songs">
-  <% facade.top_songs.each do |song| %>
-    <div class="song">
-      <ul>
-        <li class="song-power-index"><%= song.power_ranking %></li>
-        <li class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></li>
-        <li class="song-artist"><%= song.artist %></li>
-        <li class="song-play-count"><%= song.play_count %></li>
-        <li class="song-last-played"><%= song.updated_at %></li>
-      </ul>
-    </div>
-  <% end %>
-</section>
+<%= link_to "Get Songs", 'spotify/songs' %>
+
+<% if 1 != 1 %>
+	<section class="top-songs">
+	  <% facade.top_songs.each do |song| %>
+	    <div class="song">
+	      <ul>
+	        <li class="song-power-index"><%= song.power_ranking %></li>
+	        <li class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></li>
+	        <li class="song-artist"><%= song.artist %></li>
+	        <li class="song-play-count"><%= song.play_count %></li>
+	        <li class="song-last-played"><%= song.updated_at %></li>
+	      </ul>
+	    </div>
+	  <% end %>
+	</section>
+<% end %>
