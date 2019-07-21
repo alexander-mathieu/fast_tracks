@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   get 'auth/strava/callback', to: 'login#create'
   get 'auth/spotify/callback', to: 'spotify#create'
+  get 'spotify/songs', to: 'spotify#index'
 end
