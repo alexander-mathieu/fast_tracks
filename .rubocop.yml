@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - 'db/**/*.rb'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'node_modules/**/*'
+    - 'bin/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'config/routes.rb'
+    - 'config/environments/development.rb'
+    - 'lib/tasks/*.rake'
+
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'lib/tasks/*.rake'
