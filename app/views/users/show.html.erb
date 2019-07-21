@@ -35,7 +35,7 @@
                   <th scope="row" class="song-power-index"><%= song.power_ranking %></th>
                   <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
                   <td class="song-artist"><%= song.artist %></td>
-                  <td class="song-play-count"><%= song.play_count %></td>
+                  <td class="song-play-count"><%= current_user.play_count(song) %></td>
                   <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
                 </tr>
               </div>
@@ -60,5 +60,3 @@
   </div>
   <%# <div class="col-md-2"></div> %>
 </section>
-
-<% end %>
