@@ -24,7 +24,7 @@ RSpec.describe StravaService do
       stub_data = File.read('./spec/fixtures/strava_user_info.json')
 
       stub_request(:get, 'https://www.strava.com/api/v3/athlete?access_token=123456789')
-      .to_return(status: 200, body: stub_data)
+        .to_return(status: 200, body: stub_data)
 
       user_info = @strava_service.get_user_info
 
@@ -38,7 +38,7 @@ RSpec.describe StravaService do
       stub_data = File.read('./spec/fixtures/strava_user_activities.json')
 
       stub_request(:get, 'https://www.strava.com/api/v3/activities?access_token=123456789')
-      .to_return(status: 200, body: stub_data)
+        .to_return(status: 200, body: stub_data)
 
       user_activities = @strava_service.get_user_activities
 
@@ -54,7 +54,7 @@ RSpec.describe StravaService do
       stub_data = File.read('./spec/fixtures/strava_activity_streams.json')
 
       stub_request(:get, 'https://www.strava.com/api/v3/activities/2535456946/streams?keys=time,grade_smooth,velocity_smooth&access_token=123456789')
-      .to_return(status: 200, body: stub_data)
+        .to_return(status: 200, body: stub_data)
 
       activity_streams = @strava_service.get_activity_streams('2535456946')
 
