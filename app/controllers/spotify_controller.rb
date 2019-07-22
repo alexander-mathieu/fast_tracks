@@ -6,7 +6,8 @@ class SpotifyController < ApplicationController
     token_info = SpotifyOauthGenerator.new(params['code']).connect_to_spotify
     current_user.spotify_token = token_info['access_token']
     current_user.save
-    redirect_to root_path
+    flash[:success] = "Spotify data synced"
+    redirect_to dashboard_path
   end
 
 	def index

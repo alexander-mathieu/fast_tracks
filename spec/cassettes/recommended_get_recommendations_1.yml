@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn/19.9.0
+      Date:
+      - Mon, 22 Jul 2019 04:25:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1440'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"album":"\ubd04\uc778\uac00 \ubd10 Spring Love","album_art_url":"https://i.scdn.co/image/fa209a9a46a8c0eb710d0631c452803fc8c29e25","artist":"Eric
+        Nam","length":198749,"spotify_id":"6YOXdy9jShw66iOnBzQMKv","spotify_url":"https://open.spotify.com/track/6YOXdy9jShw66iOnBzQMKv","title":"\ubd04\uc778\uac00
+        \ubd10 Spring Love"},{"album":"Camp (Deluxe Version)","album_art_url":"https://i.scdn.co/image/77eb7c17cafe55037b5a7d34679c7d84af9736f3","artist":"Childish
+        Gambino","length":195186,"spotify_id":"5H6kQRRmrd5C7Pn4khGl3e","spotify_url":"https://open.spotify.com/track/5H6kQRRmrd5C7Pn4khGl3e","title":"Bonfire"},{"album":"Weathermen","album_art_url":"https://i.scdn.co/image/b51ebca8561e24a707c107faf36e441893e6d311","artist":"MKIT
+        RAIN","length":283564,"spotify_id":"6hdydVE86VHkTxHhAoIx9f","spotify_url":"https://open.spotify.com/track/6hdydVE86VHkTxHhAoIx9f","title":"Weathermen"},{"album":"Why
+        Am I So Happy?","album_art_url":"https://i.scdn.co/image/53c3e0fdf88c4c7c196295048955f2f158904e60","artist":"Spose","length":229941,"spotify_id":"6nfDT5gdEAjc1oqtZZ6NZ8","spotify_url":"https://open.spotify.com/track/6nfDT5gdEAjc1oqtZZ6NZ8","title":"Alternative
+        Radio"},{"album":"JET LAG","album_art_url":"https://i.scdn.co/image/b1492273ccf42d3a90a695c49237bc24da4f51ba","artist":"YEAR
+        OF THE OX","length":186253,"spotify_id":"3mJ1ps6J0chROo9O8nlFm9","spotify_url":"https://open.spotify.com/track/3mJ1ps6J0chROo9O8nlFm9","title":"JET
+        LAG"}]
+
+'
+    http_version: 
+  recorded_at: Mon, 22 Jul 2019 04:25:59 GMT
+recorded_with: VCR 5.0.0
