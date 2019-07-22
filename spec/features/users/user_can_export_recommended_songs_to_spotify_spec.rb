@@ -30,8 +30,18 @@ RSpec.describe 'As a registered user' do
       within '.recommended-songs' do
         within '.playlist-export' do
           expect(page).to have_field :playlist_name
-          expect(page).to have_button 'Create Spotify Playlist'
+          expect(page).to have_button 'Create Playlist'
         end
+      end
+    end
+
+    describe 'and fill out the form to export a playlist to Spotify correctly' do
+      it 'I stay on my current path and see a message telling me the playlist was added' do
+        fill_in :playlist_name, with: 'New Jams'
+        click_button 'Create Playlist'
+
+        expect(current_path).to eq(dashboard_path)
+        expect(page).to have_content('Playlist successfully added!')
       end
     end
   end
