@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
+    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf,2MIcpZ7MBeCUEVFDBqU7Ei
     body:
       encoding: US-ASCII
       string: ''
@@ -23,69 +23,25 @@ http_interactions:
       Server:
       - gunicorn/19.9.0
       Date:
-      - Sun, 21 Jul 2019 03:56:45 GMT
+      - Mon, 22 Jul 2019 04:22:05 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1459'
+      - '1428'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"album":"4X4","album_art_url":"https://i.scdn.co/image/49dfe36d49b7f080cd51f0d82fc41262d8d815c0","artist":"SunWoo
-        Jung-A","length":247496,"spotify_id":"0l9jBZWCFyKdYVVYrzzTMR","spotify_url":"https://open.spotify.com/track/0l9jBZWCFyKdYVVYrzzTMR","title":"Sooni
-        (I''m your fanatic girl)"},{"album":"Coming To You Live","album_art_url":"https://i.scdn.co/image/77eb7c17cafe55039e170c1222cc2199dbcd1961","artist":"DPR
-        LIVE","length":213446,"spotify_id":"1PCkbjg2mFmrGAqdP8LB8F","spotify_url":"https://open.spotify.com/track/1PCkbjg2mFmrGAqdP8LB8F","title":"To
-        Myself"},{"album":"Old Boy Jon","album_art_url":"https://i.scdn.co/image/41f7ea019f9be9e963a2c12352e16c6656c25daf","artist":"Dumbfoundead","length":182573,"spotify_id":"4eyHT04G33u8OmB49w8dYj","spotify_url":"https://open.spotify.com/track/4eyHT04G33u8OmB49w8dYj","title":"Ganghis
-        Khan"},{"album":"Huckleberry","album_art_url":"https://i.scdn.co/image/f53176458b1335aeac791c6b7ef92a6a954a6493","artist":"Sam
-        Lachow","length":214072,"spotify_id":"5bBsxYuiDd8LUb3kF6RoYL","spotify_url":"https://open.spotify.com/track/5bBsxYuiDd8LUb3kF6RoYL","title":"Banana
-        Goo Pie (Bonus Track) [feat. Sky Blaow, Ryan Campbell & J. Byrd]"},{"album":"Luckynumbers","album_art_url":"https://i.scdn.co/image/9ce9876eb1bf57e40c0e990839dde2bc4cfb325e","artist":"Dynamic
-        Duo","length":294320,"spotify_id":"7gRVrDCQcoEnHrPxdblf6I","spotify_url":"https://open.spotify.com/track/7gRVrDCQcoEnHrPxdblf6I","title":"Life
-        Is Good"}]
+      string: '[{"album":"RAREPANTHER+BEACHHOUSE - Single","album_art_url":"https://i.scdn.co/image/1f161c8e1737767df7256312f5859afe2e7752fa","artist":"Duckwrth","length":307631,"spotify_id":"2EXs1vunQoeMjDWcFUgTap","spotify_url":"https://open.spotify.com/track/2EXs1vunQoeMjDWcFUgTap","title":"RAREPANTHER+BEACHHOUSE"},{"album":"Running
+        Wild","album_art_url":"https://i.scdn.co/image/b021d9eb242296d80e600f3b72f106381e4bd7b4","artist":"Grieves","length":214893,"spotify_id":"04SO1QnuOtVHvyAmcYDdYM","spotify_url":"https://open.spotify.com/track/04SO1QnuOtVHvyAmcYDdYM","title":"What
+        It Dew"},{"album":"In Context","album_art_url":"https://i.scdn.co/image/cfa13015a2e5532dfa655538688076cc771d0969","artist":"The
+        Palmer Squares","length":312926,"spotify_id":"6X4BJrinl7b7pswnQMEYix","spotify_url":"https://open.spotify.com/track/6X4BJrinl7b7pswnQMEYix","title":"Painting
+        Pictures"},{"album":"Color Theory","album_art_url":"https://i.scdn.co/image/7024bf6193a8f57d92711e45dd7c363e92ce9281","artist":"Kero
+        One","length":195880,"spotify_id":"1xzhH5co9UEnwADrjPtyfz","spotify_url":"https://open.spotify.com/track/1xzhH5co9UEnwADrjPtyfz","title":"So
+        Seductive (feat. Jeni Suk)"},{"album":"The Rise","album_art_url":"https://i.scdn.co/image/ed43e1646a85add85bac4c822280a28b0c4fc7d7","artist":"Futuristic","length":167559,"spotify_id":"2UmtjSvU9FOVKJH9trz7Ht","spotify_url":"https://open.spotify.com/track/2UmtjSvU9FOVKJH9trz7Ht","title":"Too
+        Easy"}]
 
 '
     http_version: 
-  recorded_at: Sun, 21 Jul 2019 03:56:45 GMT
-- request:
-    method: get
-    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.4
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Server:
-      - gunicorn/19.9.0
-      Date:
-      - Sun, 21 Jul 2019 03:56:45 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '1364'
-      Via:
-      - 1.1 vegur
-    body:
-      encoding: UTF-8
-      string: '[{"album":"Intuition & Equalibrum","album_art_url":"https://i.scdn.co/image/4c1b635586ca089a20b991b8569c4c618541ec21","artist":"Intuition
-        & Equalibrum","length":256148,"spotify_id":"6qJwbo4X8T6KVMsFobmhaI","spotify_url":"https://open.spotify.com/track/6qJwbo4X8T6KVMsFobmhaI","title":"Weight
-        Is Gone"},{"album":"Shalom","album_art_url":"https://i.scdn.co/image/b6f632e04e6a018ceab64b5efcd4eab5f9d42926","artist":"BewhY","length":280803,"spotify_id":"2B9jMlaTQ6gwhPj3yclqZs","spotify_url":"https://open.spotify.com/track/2B9jMlaTQ6gwhPj3yclqZs","title":"Shalom"},{"album":"what.","album_art_url":"https://i.scdn.co/image/895244fd8b5637bf177932b8790b296d0be02b7d","artist":"Bo
-        Burnham","length":263099,"spotify_id":"07xM26pWCDsUWV2ialwgNf","spotify_url":"https://open.spotify.com/track/07xM26pWCDsUWV2ialwgNf","title":"Sad"},{"album":"Two
-        Tone Rebel","album_art_url":"https://i.scdn.co/image/ab3c5b1066ae8c463634f28991c15191725c0202","artist":"E-Dubble","length":194137,"spotify_id":"43kQu3PTBhCZCNhzaufAaX","spotify_url":"https://open.spotify.com/track/43kQu3PTBhCZCNhzaufAaX","title":"Two
-        Tone Rebel"},{"album":"Bills","album_art_url":"https://i.scdn.co/image/a1581992062dc003b98fd1957a505d9f20c12461","artist":"grandson","length":162446,"spotify_id":"5G1lwu6P8F6ZhTk3mPLjtz","spotify_url":"https://open.spotify.com/track/5G1lwu6P8F6ZhTk3mPLjtz","title":"Bills"}]
-
-'
-    http_version: 
-  recorded_at: Sun, 21 Jul 2019 03:56:45 GMT
+  recorded_at: Mon, 22 Jul 2019 04:22:05 GMT
 recorded_with: VCR 5.0.0

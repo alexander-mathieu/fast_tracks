@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn/19.9.0
+      Date:
+      - Mon, 22 Jul 2019 04:33:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1411'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"album":"Troop (feat. Smino)","album_art_url":"https://i.scdn.co/image/678ca030f331a9c2cae61feee5f73cd95da4ebcb","artist":"tobi
+        lou","length":266181,"spotify_id":"6OyDjQiFgIX4JnnfQ9zYf8","spotify_url":"https://open.spotify.com/track/6OyDjQiFgIX4JnnfQ9zYf8","title":"Troop
+        (feat. Smino)"},{"album":"12 Odd Future Songs","album_art_url":"https://i.scdn.co/image/94e4408a0ccd915aa4bb22cb54223baaab4d585a","artist":"Domo
+        Genesis","length":172840,"spotify_id":"2q35pHabpVH0UPBfDXskvP","spotify_url":"https://open.spotify.com/track/2q35pHabpVH0UPBfDXskvP","title":"Rolling
+        Papers"},{"album":"Lucky You!","album_art_url":"https://i.scdn.co/image/7b457246a6491a9a95f5765163f275a71a0ca59c","artist":"Primary","length":243405,"spotify_id":"41Ig1H24BMwgjBpGKShItm","spotify_url":"https://open.spotify.com/track/41Ig1H24BMwgjBpGKShItm","title":"Gondry"},{"album":"Typical
+        Story","album_art_url":"https://i.scdn.co/image/a9a42c8381bcc6d65058962ae283d6967ad548d9","artist":"Hobo
+        Johnson","length":191068,"spotify_id":"3CTBO7cZM8tM3jIZmAWiFr","spotify_url":"https://open.spotify.com/track/3CTBO7cZM8tM3jIZmAWiFr","title":"Typical
+        Story"},{"album":"All 6''s And 7''s","album_art_url":"https://i.scdn.co/image/49258c6743e87305b00b878773081376f73d1d1e","artist":"Tech
+        N9ne","length":326426,"spotify_id":"2Lo2BWhhlZSJds2yBhxoet","spotify_url":"https://open.spotify.com/track/2Lo2BWhhlZSJds2yBhxoet","title":"Worldwide
+        Choppers"}]
+
+'
+    http_version: 
+  recorded_at: Mon, 22 Jul 2019 04:33:45 GMT
+recorded_with: VCR 5.0.0
