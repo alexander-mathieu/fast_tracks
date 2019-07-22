@@ -7,9 +7,10 @@ class User < ApplicationRecord
 
   def top_songs(limit)
     songs
-      .joins(:user_songs)
-      .select('songs.*, user_songs.played_at, user_songs.power_ranking')
-      .order(power_ranking: :DESC)
+    .select("songs.*, MAX(user_songs.played_at) AS last_played_at, AVG(user_songs.power_ranking) AS avg_power_ranking, COUNT(user_songs.played_at) AS play_count")
+      .where("power_ranking > 0")
+      .group("songs.id")
+      .order("avg_power_ranking DESC")
       .limit(limit)
   end
 
