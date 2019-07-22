@@ -20,7 +20,7 @@ describe 'As a fully connected user on my dashboard path' do
       within '#song-title' do
         expect(page).to have_content(song.title)
       end
-      save_and_open_page
+
       expect(page).to have_selector('#album-art')
       expect(page).to have_selector('#song-metrics')
       expect(page).to have_selector('#last-activities')
