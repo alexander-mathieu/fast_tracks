@@ -59,7 +59,7 @@ describe SongSifter, type: :model do
       actual = UserSong.last
 
       expect(actual).to be_a(UserSong)
-      expect(actual.played_at).to eq(@attrs[:played_at].to_i)
+      expect(actual.played_at).to eq(@attrs[:played_at])
       expect(actual.user_id).to eq(@user.id)
       expect(actual.song_id).to eq(song.id)
     end
