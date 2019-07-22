@@ -11,21 +11,22 @@ RSpec.describe 'As a user who has connected their Spotify account' do
       create(:user_song, user: @user, power_ranking: 0.7, song: create(:song, spotify_id: '2SpLqYLZ5GQTFTDwA4xwGS'))
       create(:user_song, user: @user, power_ranking: 0.6, song: create(:song, spotify_id: '5fUZNS9QZXOg0aYjnIjr1H'))
       create(:user_song, user: @user, power_ranking: 0.5, song: create(:song, spotify_id: '0tuE3l1TPJ9tKG4w63kgtf'))
-      create(:user_song, user: @user, song: create(:song))
-      create(:user_song, user: @user, song: create(:song))
-      create(:user_song, user: @user, song: create(:song))
-      create(:user_song, user: @user, song: create(:song))
-      create(:user_song, user: @user, song: create(:song))
-      create(:user_song, user: @user, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
+      create(:user_song, user: @user, power_ranking: 0.01, song: create(:song))
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
     it 'I see a list of 10 songs ' do
-      VCR.use_cassette 'recommended_get_recommendations' do
+      VCR.use_cassette 'recommended_get_recommendations_1' do
         visit dashboard_path
       end
       
       expect(page).to have_content(@user.strava_firstname)
+
 
       within '.top-songs' do
         expect(page).to have_selector('.song', count: 10)

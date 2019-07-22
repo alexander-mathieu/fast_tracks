@@ -15,7 +15,7 @@ RSpec.describe 'As a user who has connected their Spotify account and' do
       create(:user_song, user: @user, song: create(:song, spotify_id: '5fUZNS9QZXOg0aYjnIjr1H'))
       create(:user_song, user: @user, song: create(:song, spotify_id: '0tuE3l1TPJ9tKG4w63kgtf'))
       
-      VCR.use_cassette 'recommended_get_recommendations' do
+      VCR.use_cassette 'recommended_get_recommendations_2' do
         visit dashboard_path
       end
 
