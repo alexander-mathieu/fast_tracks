@@ -13,7 +13,7 @@ describe SongSifter, type: :model do
       @attrs = { title: 'title', artist: 'artist', album: 'album',
                  album_art_url: 'url', spotify_url: 'url',
                  spotify_id: 'spotify_id', length: 8_675_309,
-                 played_at: '111111111111' }
+                 played_at: DateTime.parse('2016-12-13T20:44:04.589Z') }
     end
   end
 
@@ -59,7 +59,7 @@ describe SongSifter, type: :model do
       actual = UserSong.last
 
       expect(actual).to be_a(UserSong)
-      expect(actual.played_at).to eq(@attrs[:played_at].to_i)
+      expect(actual.played_at).to eq(@attrs[:played_at])
       expect(actual.user_id).to eq(@user.id)
       expect(actual.song_id).to eq(song.id)
     end
