@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'As a registered user' do
   describe 'when I visit my dashboard' do
     before :each do
-      @user = create(:user)
+      @user = create(:user, spotify_uid: ENV['SPOTIFY_UID'], spotify_token: ENV['SPOTIFY_TEST_TOKEN'])
 
       create(:user_song, user: @user, power_ranking: 0.9, song: create(:song, spotify_id: '2MIcpZ7MBeCUEVFDBqU7Ei'))
       create(:user_song, user: @user, power_ranking: 0.8, song: create(:song, spotify_id: '4v6dF5830rtgjYr0uov248'))
@@ -38,7 +38,10 @@ RSpec.describe 'As a registered user' do
     describe 'and fill out the form to export a playlist to Spotify correctly' do
       it 'I stay on my current path and see a message telling me the playlist was added' do
         fill_in :playlist_name, with: 'New Jams'
-        click_button 'Create Playlist'
+
+        VCR.use_cassette 'export_spotify_playlist' do
+          click_button 'Create Playlist'
+        end
 
         expect(current_path).to eq(dashboard_path)
         expect(page).to have_content('Playlist successfully added!')
