@@ -27,8 +27,8 @@ class SongSifter
   def attr_hasher(attr_grab_arry)
     { played_at: attr_grab_arry[0], spotify_id: attr_grab_arry[1],
       title: attr_grab_arry[2], artist: attr_grab_arry[3],
-      album: attr_grab_arry[4], album_art_url: attr_grab_arry[5],
-      spotify_url: attr_grab_arry[6], length:  attr_grab_arry[7] }
+      album: attr_grab_arry[4], album_art_url: attr_grab_arry[6],
+      spotify_url: attr_grab_arry[5], length:  attr_grab_arry[7] }
   end
 
   def song_build(attrs)
