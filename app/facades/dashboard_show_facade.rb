@@ -14,7 +14,7 @@ class DashboardShowFacade
   end
 
   def recommended_songs
-    songs = @user.top_songs(5).map{ |song| song.spotify_id }.join(',')
+    songs = @user.top_songs(5).map(&:spotify_id).join(',')
     @recommended_songs ||= recommended_service.get_recommendations(songs)
   end
 

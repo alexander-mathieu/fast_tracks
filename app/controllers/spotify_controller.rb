@@ -10,9 +10,9 @@ class SpotifyController < ApplicationController
     redirect_to root_path
   end
 
-	def index
-		songs_data = SpotifyService.new(current_user.spotify_token).get_user_songs[:items]
-		SongSifter.new(songs_data, current_user).sift_songs
-		redirect_to dashboard_path
-	end
+  def index
+    songs_data = SpotifyService.new(current_user.spotify_token).get_user_songs[:items]
+    SongSifter.new(songs_data, current_user).sift_songs
+    redirect_to dashboard_path
+  end
 end
