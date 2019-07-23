@@ -13,6 +13,11 @@ class StravaService
     get_json('activities')
   end
 
+  def get_activity_streams(activity_id)
+    params = { keys: 'time,grade_smooth,velocity_smooth' }
+    get_json("activities/#{activity_id}/streams", params)
+  end
+
   private
 
   def get_json(url, params = {})
@@ -26,5 +31,4 @@ class StravaService
       f.adapter Faraday.default_adapter
     end
   end
-
 end
