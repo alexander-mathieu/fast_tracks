@@ -32,16 +32,18 @@
             </tr>
           </thead>
           <tbody>
-            <% facade.top_songs.each do |song| %>
-              <div class="song">
-                <tr>
-                  <th scope="row" class="song-power-index"><%= (song.avg_power_ranking * 100).to_i %></th>
-                  <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
-                  <td class="song-artist"><%= song.artist %></td>
-                  <td class="song-play-count"><%= song.play_count %></td>
-                  <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
-                </tr>
-              </div>
+            <% cache cache_key_for(Song, "top_songs") do %>
+              <% facade.top_songs.each do |song| %>
+                <div class="song">
+                  <tr>
+                    <th scope="row" class="song-power-index"><%= (song.avg_power_ranking * 100).to_i %></th>
+                    <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
+                    <td class="song-artist"><%= song.artist %></td>
+                    <td class="song-play-count"><%= song.play_count %></td>
+                    <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
+                  </tr>
+                </div>
+              <% end %>
             <% end %>
           </tbody>
         </table>
@@ -57,10 +59,12 @@
                   <%= submit_tag 'Create Playlist', class: 'btn btn-success' %>
                 <% end %>
               </section>
-              <% facade.recommended_songs.each do |song| %>
-                <div class="song">
-                  <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </div>
+              <% cache cache_key_for(Song, "recommended-song") do %>
+                <% facade.recommended_songs.each do |song| %>
+                  <div class="song">
+                    <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  </div>
+                <% end %>
               <% end %>
           </section>
         <% end %>
