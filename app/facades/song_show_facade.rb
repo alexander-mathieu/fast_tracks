@@ -16,7 +16,7 @@ class SongShowFacade
         }]
     }
     user_songs.each do |song|
-      data[:labels] << DateTime.strptime(song.played_at.to_s, '%Q').strftime('%-d %B %Y')
+      data[:labels] << song.played_at.strftime('%-d %B %Y')
       data[:datasets][0][:data] << (song.power_ranking * 100).round
     end
     data
