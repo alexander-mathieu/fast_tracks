@@ -27,7 +27,7 @@ describe 'As a fully connected user' do
     it 'Has a chart with all of the previous times I have listened to the song and the PR' do
       visit song_path(@song)
 
-      within('.pr-chart') do
+      within('#pr-chart') do
         expect(page).to have_content("PowerRanking Over Time")
         expect(page).to have_css('#chart-0')
       end
