@@ -23,7 +23,7 @@ class SongShowFacade
     }
   end
 
-private
+  private
 
   def data
     {
