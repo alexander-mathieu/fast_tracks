@@ -36,6 +36,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday', '~> 0.15.4'
 gem 'figaro', '~> 1.1'
 gem 'omniauth-strava-oauth2'
+gem 'chartjs-ror'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
