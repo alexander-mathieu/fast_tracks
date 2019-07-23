@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr
+      - https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -39,7 +39,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Date:
-      - Tue, 23 Jul 2019 01:35:22 GMT
+      - Tue, 23 Jul 2019 19:45:29 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -53,14 +53,14 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/1XEXC0y3Jl6lwViv1g7eZr"
+            "spotify" : "https://open.spotify.com/playlist/23NqHm1gPXLncjx2v19mpI"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr",
-          "id" : "1XEXC0y3Jl6lwViv1g7eZr",
+          "href" : "https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI",
+          "id" : "23NqHm1gPXLncjx2v19mpI",
           "images" : [ ],
           "name" : "New Jams",
           "owner" : {
@@ -75,9 +75,9 @@ http_interactions:
           },
           "primary_color" : null,
           "public" : true,
-          "snapshot_id" : "MSw5YzExYTgwYWZiZTZkYjA5MDkwODA3MmIxZDI4NjUwNDE3YTU2YTQ4",
+          "snapshot_id" : "MSwwYmFhYTg1ODZmYjdkYTEyMzhiMGY2YzZjNGY2MDNhMGFkNWRlNzMz",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -86,13 +86,13 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:1XEXC0y3Jl6lwViv1g7eZr"
+          "uri" : "spotify:playlist:23NqHm1gPXLncjx2v19mpI"
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 01:35:20 GMT
+  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr/tracks?uris=spotify:track:0l9jBZWCFyKdYVVYrzzTMR,spotify:track:1PCkbjg2mFmrGAqdP8LB8F,spotify:track:4eyHT04G33u8OmB49w8dYj,spotify:track:5bBsxYuiDd8LUb3kF6RoYL,spotify:track:7gRVrDCQcoEnHrPxdblf6I
+    uri: https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
     body:
       encoding: UTF-8
       string: ''
@@ -127,7 +127,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Date:
-      - Tue, 23 Jul 2019 01:35:22 GMT
+      - Tue, 23 Jul 2019 19:45:30 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -138,10 +138,10 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "MixjMTZjNWE2YjQ4MjdlZjJjMDQwOTVhYmVjMjg2YTg1OTY3MTVlN2Zk"
+          "snapshot_id" : "MiwwMDhhMmJjYTFjOWE1NDI0ZWViZmI0YmEyNjk4Y2JmZTBjZTY1ZGYz"
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 01:35:20 GMT
+  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 - request:
     method: get
     uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
@@ -165,25 +165,23 @@ http_interactions:
       Server:
       - gunicorn/19.9.0
       Date:
-      - Tue, 23 Jul 2019 01:35:23 GMT
+      - Tue, 23 Jul 2019 19:45:30 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1382'
+      - '1386'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"album":"No Matter What","album_art_url":"https://i.scdn.co/image/9f7581c669e17612894f6b6656799cde7bb07cea","artist":"BoA","length":185990,"spotify_id":"0Yc2gPL8g9P6FUEFXhtI3q","spotify_url":"https://open.spotify.com/track/0Yc2gPL8g9P6FUEFXhtI3q","title":"No
-        Matter What"},{"album":"Hell Can Wait","album_art_url":"https://i.scdn.co/image/a20341bb51c43dd58a426e4078f0898cd4f46be7","artist":"Vince
-        Staples","length":247013,"spotify_id":"7nUsDCJPnJTqNUqxipnNy4","spotify_url":"https://open.spotify.com/track/7nUsDCJPnJTqNUqxipnNy4","title":"Screen
-        Door"},{"album":"Kero & Azure","album_art_url":"https://i.scdn.co/image/ca1834e3baeb078d98ba2f35931b26d54b013b76","artist":"Kero
-        One","length":186390,"spotify_id":"7oCl9OYECGEdwGQ8mFnaCB","spotify_url":"https://open.spotify.com/track/7oCl9OYECGEdwGQ8mFnaCB","title":"Let
-        Me Show You"},{"album":"One Step","album_art_url":"https://i.scdn.co/image/9d54842cc7ed33ffb03c0893897ed34a00f72493","artist":"Hyolyn","length":196802,"spotify_id":"5V3cwxCMYUHCf8dtWgbw7e","spotify_url":"https://open.spotify.com/track/5V3cwxCMYUHCf8dtWgbw7e","title":"One
-        Step (feat.Jay Park)"},{"album":"Hump Days","album_art_url":"https://i.scdn.co/image/1a4bb5b379ac2bf944aebfb32a4c8d854e453d06","artist":"Lil
-        Dicky","length":240876,"spotify_id":"0zRap4IN4GliABWHrElGWL","spotify_url":"https://open.spotify.com/track/0zRap4IN4GliABWHrElGWL","title":"Flames"}]
+      string: '[{"album":"The Audacity! (Deluxe Edition)","album_art_url":"https://i.scdn.co/image/4d8b2db520551f2a801ae593b2eb3dcc77bd7272","artist":"Spose","length":275613,"spotify_id":"5uEdbvfhqIEJLzX5hCPVNO","spotify_url":"https://open.spotify.com/track/5uEdbvfhqIEJLzX5hCPVNO","title":"Gee
+        Willikers"},{"album":"Camp (Deluxe Version)","album_art_url":"https://i.scdn.co/image/77eb7c17cafe55037b5a7d34679c7d84af9736f3","artist":"Childish
+        Gambino","length":195186,"spotify_id":"5H6kQRRmrd5C7Pn4khGl3e","spotify_url":"https://open.spotify.com/track/5H6kQRRmrd5C7Pn4khGl3e","title":"Bonfire"},{"album":"Cardboard
+        Castles","album_art_url":"https://i.scdn.co/image/9c5b8eb076bd7eba8f00e8a1f9ef18a99126ff3e","artist":"Watsky","length":175213,"spotify_id":"0LiK2PLz6KdlASVz057dXM","spotify_url":"https://open.spotify.com/track/0LiK2PLz6KdlASVz057dXM","title":"Ugly
+        Faces"},{"album":"Old Boy Jon","album_art_url":"https://i.scdn.co/image/41f7ea019f9be9e963a2c12352e16c6656c25daf","artist":"Dumbfoundead","length":182573,"spotify_id":"4eyHT04G33u8OmB49w8dYj","spotify_url":"https://open.spotify.com/track/4eyHT04G33u8OmB49w8dYj","title":"Ganghis
+        Khan"},{"album":"Wu","album_art_url":"https://i.scdn.co/image/62dd979d3612cfca54ee715f60b53669ea9225ea","artist":"Nafla","length":165385,"spotify_id":"0PcSv8bwpVvgGDMNSQW2ZU","spotify_url":"https://open.spotify.com/track/0PcSv8bwpVvgGDMNSQW2ZU","title":"Wu"}]
 
 '
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 01:35:21 GMT
+  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 recorded_with: VCR 5.0.0
