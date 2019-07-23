@@ -22,8 +22,14 @@ describe 'As a fully connected user' do
       end
 
       expect(page).to have_selector('#album-art')
-      expect(page).to have_selector('#song-metrics')
-      expect(page).to have_selector('#last-activities')
+    end
+
+    it 'Has a chart with all of the previous times I have listened to the song and the PR' do
+      visit song_path(@song)
+
+      within('.chart') do
+        expect(page).to have_css('#chart-0')
+      end
     end
   end
 end
