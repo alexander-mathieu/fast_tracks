@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_07_21_151600) do
     t.float "power_ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "played_at"
+    t.datetime "played_at"
     t.index ["song_id"], name: "index_user_songs_on_song_id"
     t.index ["user_id"], name: "index_user_songs_on_user_id"
   end

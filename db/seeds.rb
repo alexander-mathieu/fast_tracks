@@ -198,72 +198,72 @@ song10 = Song.create!(spotify_id: '4xkOaSrkexMciUUogZKVTS',
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.48,
-  played_at: 1563767997685)
+  played_at: DateTime.parse('2019-07-20T20:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.58,
-  played_at: 1563492195000)
+  played_at: DateTime.parse('2019-07-21T21:42:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.28,
-  played_at: 1563492115000)
+  played_at: DateTime.parse('2019-07-22T20:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.18,
-  played_at: 1563492135000)
+  played_at: DateTime.parse('2019-07-22T22:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.98,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-23T20:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song1.id,
   power_ranking: 0.78,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-26T20:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song2.id,
   power_ranking: 0.48,
-  played_at: 1563767997685)
+  played_at: DateTime.parse('2019-07-18T07:34:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song3.id,
   power_ranking: 0.58,
-  played_at: 1563492195000)
+  played_at: DateTime.parse('2019-07-11T08:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song4.id,
   power_ranking: 0.28,
-  played_at: 1563492115000)
+  played_at: DateTime.parse('2019-07-29T10:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song5.id,
   power_ranking: 0.18,
-  played_at: 1563492135000)
+  played_at: DateTime.parse('2019-07-21T21:22:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song6.id,
   power_ranking: 0.98,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-20T20:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song7.id,
   power_ranking: 0.78,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-21T10:24:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song8.id,
   power_ranking: 0.48,
-  played_at: 1563767997685)
+  played_at: DateTime.parse('2019-07-22T23:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song9.id,
   power_ranking: 0.58,
-  played_at: 1563492195000)
+  played_at: DateTime.parse('2019-07-25T13:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song10.id,
   power_ranking: 0.28,
-  played_at: 1563492115000)
+  played_at: DateTime.parse('2019-07-20T09:44:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song2.id,
   power_ranking: 0.18,
-  played_at: 1563492135000)
+  played_at: DateTime.parse('2019-07-24T08:36:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song3.id,
   power_ranking: 0.98,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-13T14:14:04.589Z'))
 UserSong.create!(user_id: user1.id,
   song_id: song3.id,
   power_ranking: 0.78,
-  played_at: 1563492125000)
+  played_at: DateTime.parse('2019-07-14T10:15:04.589Z'))
