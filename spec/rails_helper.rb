@@ -17,6 +17,8 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<STRAVA_TEST_TOKEN>') { ENV['STRAVA_TEST_TOKEN'] }
+  config.filter_sensitive_data('<SPOTIFY_UID>') { ENV['SPOTIFY_UID'] }
+  config.filter_sensitive_data('<SPOTIFY_TEST_TOKEN>') { ENV['SPOTIFY_TEST_TOKEN'] }
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 

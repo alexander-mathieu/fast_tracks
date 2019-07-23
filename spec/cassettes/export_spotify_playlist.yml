@@ -1,0 +1,189 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.spotify.com/v1/users/<SPOTIFY_UID>/playlists
+    body:
+      encoding: UTF-8
+      string: '{"name":"New Jams", "public":true}'
+    headers:
+      Authorization:
+      - Bearer <SPOTIFY_TEST_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Location:
+      - https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Date:
+      - Tue, 23 Jul 2019 01:35:22 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "collaborative" : false,
+          "description" : null,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/playlist/1XEXC0y3Jl6lwViv1g7eZr"
+          },
+          "followers" : {
+            "href" : null,
+            "total" : 0
+          },
+          "href" : "https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr",
+          "id" : "1XEXC0y3Jl6lwViv1g7eZr",
+          "images" : [ ],
+          "name" : "New Jams",
+          "owner" : {
+            "display_name" : "<SPOTIFY_UID>",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/user/<SPOTIFY_UID>"
+            },
+            "href" : "https://api.spotify.com/v1/users/<SPOTIFY_UID>",
+            "id" : "<SPOTIFY_UID>",
+            "type" : "user",
+            "uri" : "spotify:user:<SPOTIFY_UID>"
+          },
+          "primary_color" : null,
+          "public" : true,
+          "snapshot_id" : "MSw5YzExYTgwYWZiZTZkYjA5MDkwODA3MmIxZDI4NjUwNDE3YTU2YTQ4",
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr/tracks",
+            "items" : [ ],
+            "limit" : 100,
+            "next" : null,
+            "offset" : 0,
+            "previous" : null,
+            "total" : 0
+          },
+          "type" : "playlist",
+          "uri" : "spotify:playlist:1XEXC0y3Jl6lwViv1g7eZr"
+        }
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 01:35:20 GMT
+- request:
+    method: post
+    uri: https://api.spotify.com/v1/playlists/1XEXC0y3Jl6lwViv1g7eZr/tracks?uris=spotify:track:0l9jBZWCFyKdYVVYrzzTMR,spotify:track:1PCkbjg2mFmrGAqdP8LB8F,spotify:track:4eyHT04G33u8OmB49w8dYj,spotify:track:5bBsxYuiDd8LUb3kF6RoYL,spotify:track:7gRVrDCQcoEnHrPxdblf6I
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <SPOTIFY_TEST_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Date:
+      - Tue, 23 Jul 2019 01:35:22 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "snapshot_id" : "MixjMTZjNWE2YjQ4MjdlZjJjMDQwOTVhYmVjMjg2YTg1OTY3MTVlN2Zk"
+        }
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 01:35:20 GMT
+- request:
+    method: get
+    uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn/19.9.0
+      Date:
+      - Tue, 23 Jul 2019 01:35:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1382'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"album":"No Matter What","album_art_url":"https://i.scdn.co/image/9f7581c669e17612894f6b6656799cde7bb07cea","artist":"BoA","length":185990,"spotify_id":"0Yc2gPL8g9P6FUEFXhtI3q","spotify_url":"https://open.spotify.com/track/0Yc2gPL8g9P6FUEFXhtI3q","title":"No
+        Matter What"},{"album":"Hell Can Wait","album_art_url":"https://i.scdn.co/image/a20341bb51c43dd58a426e4078f0898cd4f46be7","artist":"Vince
+        Staples","length":247013,"spotify_id":"7nUsDCJPnJTqNUqxipnNy4","spotify_url":"https://open.spotify.com/track/7nUsDCJPnJTqNUqxipnNy4","title":"Screen
+        Door"},{"album":"Kero & Azure","album_art_url":"https://i.scdn.co/image/ca1834e3baeb078d98ba2f35931b26d54b013b76","artist":"Kero
+        One","length":186390,"spotify_id":"7oCl9OYECGEdwGQ8mFnaCB","spotify_url":"https://open.spotify.com/track/7oCl9OYECGEdwGQ8mFnaCB","title":"Let
+        Me Show You"},{"album":"One Step","album_art_url":"https://i.scdn.co/image/9d54842cc7ed33ffb03c0893897ed34a00f72493","artist":"Hyolyn","length":196802,"spotify_id":"5V3cwxCMYUHCf8dtWgbw7e","spotify_url":"https://open.spotify.com/track/5V3cwxCMYUHCf8dtWgbw7e","title":"One
+        Step (feat.Jay Park)"},{"album":"Hump Days","album_art_url":"https://i.scdn.co/image/1a4bb5b379ac2bf944aebfb32a4c8d854e453d06","artist":"Lil
+        Dicky","length":240876,"spotify_id":"0zRap4IN4GliABWHrElGWL","spotify_url":"https://open.spotify.com/track/0zRap4IN4GliABWHrElGWL","title":"Flames"}]
+
+'
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 01:35:21 GMT
+recorded_with: VCR 5.0.0

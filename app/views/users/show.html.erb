@@ -1,5 +1,4 @@
 <section class="row">
-  <%# <div class="col-md-2"></div> %>
   <div class="col-lg-12">
     <section class="py-md-3">
       <h1> <%= facade.user_name %>, Welcome to FastTracks </h1>
@@ -52,15 +51,20 @@
         <% if facade.top_songs.length > 4 %>
           <section class="recommended-songs">
             <h4>Recommended Songs</h4>
-            <% facade.recommended_songs.each do |song| %>
-              <div class="song">
-                <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-              </div>
-            <% end %>
+              <section class='playlist-export'>
+                <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
+                  <%= text_field_tag :playlist_name %>
+                  <%= submit_tag 'Create Playlist', class: 'btn btn-success' %>
+                <% end %>
+              </section>
+              <% facade.recommended_songs.each do |song| %>
+                <div class="song">
+                  <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+              <% end %>
           </section>
         <% end %>
       </section>
     </div>
   </div>
-  <%# <div class="col-md-2"></div> %>
 </section>
