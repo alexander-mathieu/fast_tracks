@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/playlists
+    uri: https://api.spotify.com/v1/users/123456/playlists
     body:
       encoding: UTF-8
       string: '{"name":"New Jams", "public":true}'
     headers:
       Authorization:
-      - Bearer <SPOTIFY_TEST_TOKEN>
+      - Bearer 123456abcde
       User-Agent:
       - Faraday v0.15.4
       Content-Type:
@@ -19,12 +19,15 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 201
+      message: Created
     headers:
-      Www-Authenticate:
-      - Bearer realm="spotify", error="invalid_token", error_description="The access
-        token expired"
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Location:
+      - https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -35,10 +38,8 @@ http_interactions:
       - 'true'
       Access-Control-Max-Age:
       - '604800'
-      Content-Type:
-      - application/json
       Date:
-      - Tue, 23 Jul 2019 20:50:18 GMT
+      - Tue, 23 Jul 2019 21:52:47 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -49,22 +50,55 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "error": {
-            "status": 401,
-            "message": "The access token expired"
-          }
+          "collaborative" : false,
+          "description" : null,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/playlist/3yNGMCr1XusmizkMqqoj38"
+          },
+          "followers" : {
+            "href" : null,
+            "total" : 0
+          },
+          "href" : "https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38",
+          "id" : "3yNGMCr1XusmizkMqqoj38",
+          "images" : [ ],
+          "name" : "New Jams",
+          "owner" : {
+            "display_name" : "<SPOTIFY_UID>",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/user/<SPOTIFY_UID>"
+            },
+            "href" : "https://api.spotify.com/v1/users/<SPOTIFY_UID>",
+            "id" : "<SPOTIFY_UID>",
+            "type" : "user",
+            "uri" : "spotify:user:<SPOTIFY_UID>"
+          },
+          "primary_color" : null,
+          "public" : true,
+          "snapshot_id" : "MSxmYTc3NWRjODI4NzVjZDQ3OWVhZWM5ZGRmMzk0NzlmNmNjODcxZjI4",
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38/tracks",
+            "items" : [ ],
+            "limit" : 100,
+            "next" : null,
+            "offset" : 0,
+            "previous" : null,
+            "total" : 0
+          },
+          "type" : "playlist",
+          "uri" : "spotify:playlist:3yNGMCr1XusmizkMqqoj38"
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
+    uri: https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
     body:
       encoding: UTF-8
       string: ''
     headers:
       Authorization:
-      - Bearer <SPOTIFY_TEST_TOKEN>
+      - Bearer 123456abcde
       User-Agent:
       - Faraday v0.15.4
       Content-Length:
@@ -75,12 +109,13 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 201
+      message: Created
     headers:
-      Www-Authenticate:
-      - Bearer realm="spotify", error="invalid_token", error_description="The access
-        token expired"
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -91,10 +126,8 @@ http_interactions:
       - 'true'
       Access-Control-Max-Age:
       - '604800'
-      Content-Type:
-      - application/json
       Date:
-      - Tue, 23 Jul 2019 20:50:18 GMT
+      - Tue, 23 Jul 2019 21:52:47 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -105,13 +138,10 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "error": {
-            "status": 401,
-            "message": "The access token expired"
-          }
+          "snapshot_id" : "MiwyNjVjNWMxYmQxNzNmMzkxZDZkZDdjMzIzM2NhODcxNjk0YjBjNDYw"
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 - request:
     method: get
     uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
@@ -135,25 +165,25 @@ http_interactions:
       Server:
       - gunicorn/19.9.0
       Date:
-      - Tue, 23 Jul 2019 20:50:18 GMT
+      - Tue, 23 Jul 2019 21:52:47 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1414'
+      - '1383'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"album":"Oil in Water","album_art_url":"https://i.scdn.co/image/60f46e0d7cf77c2c57173d33ff575a16dbfd0112","artist":"I
-        The Mighty","length":192246,"spotify_id":"691n7jfrp9qU7HjOELnyAT","spotify_url":"https://open.spotify.com/track/691n7jfrp9qU7HjOELnyAT","title":"The
-        Hound and the Fox"},{"album":"Shia LaBeouf Live","album_art_url":"https://i.scdn.co/image/a1d14aa8e0cb0feaf6450f475d7c07ff0a07e69c","artist":"Rob
-        Cantor","length":155000,"spotify_id":"3VMzQ4rh7FtfSuyjHIcuZR","spotify_url":"https://open.spotify.com/track/3VMzQ4rh7FtfSuyjHIcuZR","title":"Shia
-        LaBeouf Live"},{"album":"Intuition & Equalibrum","album_art_url":"https://i.scdn.co/image/4c1b635586ca089a20b991b8569c4c618541ec21","artist":"Intuition
-        & Equalibrum","length":256148,"spotify_id":"6qJwbo4X8T6KVMsFobmhaI","spotify_url":"https://open.spotify.com/track/6qJwbo4X8T6KVMsFobmhaI","title":"Weight
-        Is Gone"},{"album":"Eclipse","album_art_url":"https://i.scdn.co/image/035ff9d5810f06d9c1a102ff6a712eb0ccaf340c","artist":"EXID","length":198414,"spotify_id":"3ekdsWPG0ZtVrvEUPe2Djv","spotify_url":"https://open.spotify.com/track/3ekdsWPG0ZtVrvEUPe2Djv","title":"Night
-        Rather Than Day"},{"album":"LIME","album_art_url":"https://i.scdn.co/image/ad967119c1710d9be5e1d678f3274c681007ca92","artist":"punchnello","length":162142,"spotify_id":"0XE09AKy3RsRHjEhdlyjjq","spotify_url":"https://open.spotify.com/track/0XE09AKy3RsRHjEhdlyjjq","title":"LIME"}]
+      string: '[{"album":"Jarvage, Vol. 1","album_art_url":"https://i.scdn.co/image/ab0abf5abc1b030b0349fb5b244422a2284f915a","artist":"Jarv","length":194500,"spotify_id":"1H0utYmwbHj2qwWMMbOuzm","spotify_url":"https://open.spotify.com/track/1H0utYmwbHj2qwWMMbOuzm","title":"Escargot"},{"album":"Knew
+        School","album_art_url":"https://i.scdn.co/image/12dd1280266c92be26e8eb11d54485c4293b2a73","artist":"Knowmads","length":223000,"spotify_id":"1Nig8tnYHCBaBz7FPIR763","spotify_url":"https://open.spotify.com/track/1Nig8tnYHCBaBz7FPIR763","title":"Smoker''s
+        Corner"},{"album":"20","album_art_url":"https://i.scdn.co/image/409a3bad6bfbd00b1b56375c7b2fefd66b82fd23","artist":"HYUKOH","length":194866,"spotify_id":"5NnNl71fwVkuB1M45CXvdb","spotify_url":"https://open.spotify.com/track/5NnNl71fwVkuB1M45CXvdb","title":"Wi
+        Ing Wi Ing \uc704\uc789\uc704\uc789"},{"album":"Genesis","album_art_url":"https://i.scdn.co/image/a9d5c67f4035c93aa0b80797424b8894b663c0f9","artist":"Domo
+        Genesis","length":174133,"spotify_id":"7KoX0myQwA6dc6yCX8R1wS","spotify_url":"https://open.spotify.com/track/7KoX0myQwA6dc6yCX8R1wS","title":"Wanderer"},{"album":"Dawn
+        of us","album_art_url":"https://i.scdn.co/image/1b34599a866419a250f221a5e660ba206d69a795","artist":"Jackson
+        Wang","length":179833,"spotify_id":"2NpKyrIlJOHszUS2cXpEMU","spotify_url":"https://open.spotify.com/track/2NpKyrIlJOHszUS2cXpEMU","title":"Dawn
+        of us"}]
 
 '
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 recorded_with: VCR 5.0.0
