@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/<SPOTIFY_UID>/playlists
+    uri: https://api.spotify.com/v1/users/playlists
     body:
       encoding: UTF-8
       string: '{"name":"New Jams", "public":true}'
@@ -19,15 +19,12 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 401
+      message: Unauthorized
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - private, max-age=0
-      Location:
-      - https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI
+      Www-Authenticate:
+      - Bearer realm="spotify", error="invalid_token", error_description="The access
+        token expired"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -38,8 +35,10 @@ http_interactions:
       - 'true'
       Access-Control-Max-Age:
       - '604800'
+      Content-Type:
+      - application/json
       Date:
-      - Tue, 23 Jul 2019 19:45:29 GMT
+      - Tue, 23 Jul 2019 20:50:18 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -50,49 +49,16 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "collaborative" : false,
-          "description" : null,
-          "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/23NqHm1gPXLncjx2v19mpI"
-          },
-          "followers" : {
-            "href" : null,
-            "total" : 0
-          },
-          "href" : "https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI",
-          "id" : "23NqHm1gPXLncjx2v19mpI",
-          "images" : [ ],
-          "name" : "New Jams",
-          "owner" : {
-            "display_name" : "<SPOTIFY_UID>",
-            "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/<SPOTIFY_UID>"
-            },
-            "href" : "https://api.spotify.com/v1/users/<SPOTIFY_UID>",
-            "id" : "<SPOTIFY_UID>",
-            "type" : "user",
-            "uri" : "spotify:user:<SPOTIFY_UID>"
-          },
-          "primary_color" : null,
-          "public" : true,
-          "snapshot_id" : "MSwwYmFhYTg1ODZmYjdkYTEyMzhiMGY2YzZjNGY2MDNhMGFkNWRlNzMz",
-          "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI/tracks",
-            "items" : [ ],
-            "limit" : 100,
-            "next" : null,
-            "offset" : 0,
-            "previous" : null,
-            "total" : 0
-          },
-          "type" : "playlist",
-          "uri" : "spotify:playlist:23NqHm1gPXLncjx2v19mpI"
+          "error": {
+            "status": 401,
+            "message": "The access token expired"
+          }
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
+  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/23NqHm1gPXLncjx2v19mpI/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
+    uri: https://api.spotify.com/v1/playlists/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
     body:
       encoding: UTF-8
       string: ''
@@ -109,13 +75,12 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 401
+      message: Unauthorized
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - private, max-age=0
+      Www-Authenticate:
+      - Bearer realm="spotify", error="invalid_token", error_description="The access
+        token expired"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -126,8 +91,10 @@ http_interactions:
       - 'true'
       Access-Control-Max-Age:
       - '604800'
+      Content-Type:
+      - application/json
       Date:
-      - Tue, 23 Jul 2019 19:45:30 GMT
+      - Tue, 23 Jul 2019 20:50:18 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -138,10 +105,13 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "MiwwMDhhMmJjYTFjOWE1NDI0ZWViZmI0YmEyNjk4Y2JmZTBjZTY1ZGYz"
+          "error": {
+            "status": 401,
+            "message": "The access token expired"
+          }
         }
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
+  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
 - request:
     method: get
     uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
@@ -165,23 +135,25 @@ http_interactions:
       Server:
       - gunicorn/19.9.0
       Date:
-      - Tue, 23 Jul 2019 19:45:30 GMT
+      - Tue, 23 Jul 2019 20:50:18 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1386'
+      - '1414'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"album":"The Audacity! (Deluxe Edition)","album_art_url":"https://i.scdn.co/image/4d8b2db520551f2a801ae593b2eb3dcc77bd7272","artist":"Spose","length":275613,"spotify_id":"5uEdbvfhqIEJLzX5hCPVNO","spotify_url":"https://open.spotify.com/track/5uEdbvfhqIEJLzX5hCPVNO","title":"Gee
-        Willikers"},{"album":"Camp (Deluxe Version)","album_art_url":"https://i.scdn.co/image/77eb7c17cafe55037b5a7d34679c7d84af9736f3","artist":"Childish
-        Gambino","length":195186,"spotify_id":"5H6kQRRmrd5C7Pn4khGl3e","spotify_url":"https://open.spotify.com/track/5H6kQRRmrd5C7Pn4khGl3e","title":"Bonfire"},{"album":"Cardboard
-        Castles","album_art_url":"https://i.scdn.co/image/9c5b8eb076bd7eba8f00e8a1f9ef18a99126ff3e","artist":"Watsky","length":175213,"spotify_id":"0LiK2PLz6KdlASVz057dXM","spotify_url":"https://open.spotify.com/track/0LiK2PLz6KdlASVz057dXM","title":"Ugly
-        Faces"},{"album":"Old Boy Jon","album_art_url":"https://i.scdn.co/image/41f7ea019f9be9e963a2c12352e16c6656c25daf","artist":"Dumbfoundead","length":182573,"spotify_id":"4eyHT04G33u8OmB49w8dYj","spotify_url":"https://open.spotify.com/track/4eyHT04G33u8OmB49w8dYj","title":"Ganghis
-        Khan"},{"album":"Wu","album_art_url":"https://i.scdn.co/image/62dd979d3612cfca54ee715f60b53669ea9225ea","artist":"Nafla","length":165385,"spotify_id":"0PcSv8bwpVvgGDMNSQW2ZU","spotify_url":"https://open.spotify.com/track/0PcSv8bwpVvgGDMNSQW2ZU","title":"Wu"}]
+      string: '[{"album":"Oil in Water","album_art_url":"https://i.scdn.co/image/60f46e0d7cf77c2c57173d33ff575a16dbfd0112","artist":"I
+        The Mighty","length":192246,"spotify_id":"691n7jfrp9qU7HjOELnyAT","spotify_url":"https://open.spotify.com/track/691n7jfrp9qU7HjOELnyAT","title":"The
+        Hound and the Fox"},{"album":"Shia LaBeouf Live","album_art_url":"https://i.scdn.co/image/a1d14aa8e0cb0feaf6450f475d7c07ff0a07e69c","artist":"Rob
+        Cantor","length":155000,"spotify_id":"3VMzQ4rh7FtfSuyjHIcuZR","spotify_url":"https://open.spotify.com/track/3VMzQ4rh7FtfSuyjHIcuZR","title":"Shia
+        LaBeouf Live"},{"album":"Intuition & Equalibrum","album_art_url":"https://i.scdn.co/image/4c1b635586ca089a20b991b8569c4c618541ec21","artist":"Intuition
+        & Equalibrum","length":256148,"spotify_id":"6qJwbo4X8T6KVMsFobmhaI","spotify_url":"https://open.spotify.com/track/6qJwbo4X8T6KVMsFobmhaI","title":"Weight
+        Is Gone"},{"album":"Eclipse","album_art_url":"https://i.scdn.co/image/035ff9d5810f06d9c1a102ff6a712eb0ccaf340c","artist":"EXID","length":198414,"spotify_id":"3ekdsWPG0ZtVrvEUPe2Djv","spotify_url":"https://open.spotify.com/track/3ekdsWPG0ZtVrvEUPe2Djv","title":"Night
+        Rather Than Day"},{"album":"LIME","album_art_url":"https://i.scdn.co/image/ad967119c1710d9be5e1d678f3274c681007ca92","artist":"punchnello","length":162142,"spotify_id":"0XE09AKy3RsRHjEhdlyjjq","spotify_url":"https://open.spotify.com/track/0XE09AKy3RsRHjEhdlyjjq","title":"LIME"}]
 
 '
     http_version: 
-  recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
+  recorded_at: Tue, 23 Jul 2019 20:50:18 GMT
 recorded_with: VCR 5.0.0
