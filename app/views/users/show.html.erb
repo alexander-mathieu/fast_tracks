@@ -10,28 +10,29 @@
       <% end %>
     </section>
 
-    <section>
-      <div class="d-inline-block">
-        <%= button_to "Sync My Strava Data", stravas_path, class: "btn btn-success" %>
-      </div>
-      <div class="d-inline-block">
-        <%= button_to "Get Songs", 'spotify/songs', method: :get, class: "btn btn-success" %>
-      </div>
-    </section>
-    <div class="row">
-      <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
-        <h3>Top Songs</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Power Ranking</th>
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Play Count</th>
-              <th>Last Played</th>
-            </tr>
-          </thead>
-          <tbody>
+    <% if current_user.spotify_token %>
+      <section>
+        <div class="d-inline-block">
+          <%= button_to "Sync My Strava Data", stravas_path, class: "btn btn-success" %>
+        </div>
+        <div class="d-inline-block">
+          <%= button_to "Get Songs", 'spotify/songs', method: :get, class: "btn btn-success" %>
+        </div>
+      </section>
+      <div class="row">
+        <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
+          <h3>Top Songs</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Power Ranking</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Play Count</th>
+                <th>Last Played</th>
+              </tr>
+            </thead>
+            <tbody>
             <% facade.top_songs.each do |song| %>
               <div class="song">
                 <tr>
@@ -46,7 +47,9 @@
           </tbody>
         </table>
       </section>
+    <% end %>
 
+    <% if current_user.spotify_token %>
       <section class="col-lg-4 pt-md-5 pb-md-3">
         <% if facade.top_songs.length > 4 %>
           <section class="recommended-songs">
@@ -54,7 +57,7 @@
               <section class='playlist-export'>
                 <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
                   <%= text_field_tag :playlist_name %>
-                  <%= submit_tag 'Create Playlist', class: 'btn btn-success' %>
+                  <%= submit_tag 'Create Playlist', id: 'create-playlist', class: 'btn btn-success' %>
                 <% end %>
               </section>
               <% facade.recommended_songs.each do |song| %>
@@ -65,6 +68,7 @@
           </section>
         <% end %>
       </section>
+    <% end %>
     </div>
   </div>
 </section>
