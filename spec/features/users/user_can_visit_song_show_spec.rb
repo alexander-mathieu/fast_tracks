@@ -44,5 +44,16 @@ describe 'As a fully connected user' do
         expect(page).to have_link('Listen on Spotify', href: @song.spotify_url)
       end
     end
+
+    it 'displays the average PowerRanking for that song' do
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 1.0)
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 0.75)
+
+      visit song_path(@song)
+
+      within '#song-metrics' do
+        expect(page).to have_content('Average PowerRanking: 75')
+      end
+    end
   end
 end
