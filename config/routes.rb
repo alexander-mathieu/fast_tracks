@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'auth/spotify/callback', to: 'spotify#create'
   get 'spotify/songs', to: 'spotify#index'
   post '/playlist', to: 'playlist#create'
+
+  get 'hooks/strava', to: 'hooks#strava'
 end
