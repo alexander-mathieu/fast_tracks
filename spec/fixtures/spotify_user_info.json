@@ -1,0 +1,15 @@
+{
+  "display_name": "rwkoa",
+  "external_urls": {
+      "spotify": "https://open.spotify.com/user/rwkoa"
+  },
+  "followers": {
+      "href": null,
+      "total": 0
+  },
+  "href": "https://api.spotify.com/v1/users/rwkoa",
+  "id": "rwkoa",
+  "images": [],
+  "type": "user",
+  "uri": "spotify:user:rwkoa"
+}
