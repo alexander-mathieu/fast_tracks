@@ -13,6 +13,12 @@ class DashboardShowFacade
     songs = @user.top_songs(5).map{|song| song.spotify_id}.join(',')
     RecommendedService.new.get_recommendations(songs)
   end
+	
+	def recommended_api_url
+    song_ids = @user.top_songs(5).map{|song| song.spotify_id}.join(',')
+		limit = "limit=5&"
+		limit + "song_ids=" + song_ids
+	end	
 
   def build_link
     link = 'https://accounts.spotify.com/authorize?'
