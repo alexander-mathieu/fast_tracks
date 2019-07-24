@@ -2,16 +2,14 @@
   <div class="col-md-2"></div>
   <div class="col-md-8 text-center">
     <div class="p-md-5">
-      <h1>FastTracks</h1>
+      <h1 class="title">FastTracks</h1>
     </div>
     <div class="p-md-1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt euismod sagittis. 
-      Quisque fringilla, nibh a viverra consequat, lorem quam pulvinar lectus, sit amet iaculis diam lectus non odio. 
-      In nisl velit, molestie nec metus eget, aliquet tempor nunc. Duis tempor, tellus quis fringilla tempus, dolor est 
-      posuere velit, sed consectetur sapien mi at leo. Maecenas quam ante, mollis et dolor sed, sollicitudin euismod eros.</p>
+      <p>Combine data from Strava and Spotify to deliver insights and music recommendations based on real performance.
+       See what gets you moving, and build a playlist to help you hit a new PR on your next ride!</p>
     </div>
     <div class="p-md-5">
-      <%= button_to 'Login with Strava', '/auth/strava', method: :get, class: 'btn btn-outline-success' %>
+      <%= button_to 'Login with Strava', '/auth/strava', method: :get, class: 'btn btn-success btn-lg' %>
     </div>
   </div>
   <div class="col-md-2"></div>
@@ -22,3 +20,17 @@
 
   
 </section>
+
+</section>
+
+<style>
+  body {
+    font-size: 1.3em;
+    color: white;
+    padding-top: 170px;
+    height: 850px;
+    background-size: cover;
+    box-shadow: 0px 10px 20px -5px rgba(0,0,0,.3);
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.5), rgba(0,0,0,.65)), url("/assets/welcome/bike_scene.jpg");
+  }
+</style>
