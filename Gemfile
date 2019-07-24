@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday', '~> 0.15.4'
 gem 'figaro', '~> 1.1'
+gem 'jquery-rails'
+gem 'rails-ujs'
 gem 'omniauth-strava-oauth2'
 
 group :development, :test do
