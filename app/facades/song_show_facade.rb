@@ -8,7 +8,6 @@ class SongShowFacade
 
   def chart_data
     data_hash = data
-    user_songs = UserSong.where(user: @user, song: @song)
     user_songs.each do |song|
       data_hash[:labels] << song.played_at.strftime('%-d %B %Y')
       data_hash[:datasets][0][:data] << (song.power_ranking * 100).round
@@ -25,7 +24,11 @@ class SongShowFacade
   end
 
   def average_power_ranking
-    UserSong.where(user: @user, song: @song).average(:power_ranking)
+    user_songs.average(:power_ranking)
+  end
+
+  def activity_count
+    user_songs.count
   end
 
   private
@@ -40,5 +43,9 @@ class SongShowFacade
         data: []
       }]
     }
+  end
+
+  def user_songs
+    @_user_songs = UserSong.where(user: @user, song: @song)
   end
 end
