@@ -66,11 +66,12 @@
                 </section>
                 <% cache cache_key_for(Song, "recommended-song") do %>
                   <% facade.recommended_songs.each do |song| %>
-                    <div class="song">
-                      <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <div class="recommended-song">
+                      <iframe class="recommended-iframe" src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
                   <% end %>
                 <% end %>
+              <%= link_to "Refresh Recommended", dashboard_path, id: "refresh-recs", remote: true, :"data_api_params" => facade.recommended_api_url %>
             </section>
           <% end %>
         </section>
