@@ -31,5 +31,18 @@ describe 'As a fully connected user' do
         expect(page).to have_css('#chart-0')
       end
     end
+
+    it 'has all of the information on that song' do
+      visit song_path(@song)
+
+      seconds = (@song.length / 60000.0).to_s.split('.')
+
+      within '#song-info' do
+        expect(page).to have_content(@song.artist)
+        expect(page).to have_content(@song.album)
+        expect(page).to have_content("#{seconds[0]}:#{(seconds[1].to_f / 1000 * 60).floor.to_s}")
+        expect(page).to have_link('Listen on Spotify', href: @song.spotify_url)
+      end
+    end
   end
 end
