@@ -5,7 +5,11 @@ require 'rails_helper'
 RSpec.describe 'As a registered user' do
   describe 'when I visit my dashboard' do
     before :each do
+<<<<<<< HEAD
       @user = create(:user, spotify_uid: 'billyiii', spotify_token: '12345')
+=======
+      @user = create(:user, spotify_uid: '123456', spotify_token: '123456abcde')
+>>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
 
       create(:user_song, user: @user, power_ranking: 0.9, song: create(:song, spotify_id: '2MIcpZ7MBeCUEVFDBqU7Ei'))
       create(:user_song, user: @user, power_ranking: 0.8, song: create(:song, spotify_id: '4v6dF5830rtgjYr0uov248'))

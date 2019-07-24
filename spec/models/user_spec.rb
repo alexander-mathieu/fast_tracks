@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
     expect(result.spotify_url).to eq(song_1.spotify_url)
     expect(result.album_art_url).to eq(song_1.album_art_url)
     expect(result.length).to eq(song_1.length)
-    expect(result.last_played_at).to eq(user_song_1.played_at)
+    expect(result.last_played_at.strftime('%Y %m %d %H:%M:%S')).to eq(user_song_1.played_at.strftime('%Y %m %d %H:%M:%S'))
     expect(result.avg_power_ranking).to eq(user_song_1.power_ranking)
   end
 
