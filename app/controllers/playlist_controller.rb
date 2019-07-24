@@ -2,7 +2,7 @@
 
 class PlaylistController < ApplicationController
   def create
-    if playlists_include?(params[:playlist_name])
+    if playlists_include_new_playlist?
       playlist = build_playlist(params[:playlist_name])
     else
       playlist = create_playlist(current_user.spotify_uid, params[:playlist_name])
@@ -27,13 +27,13 @@ class PlaylistController < ApplicationController
     playlist_object
   end
 
-  def playlists_include?(playlist_name)
-     playlists = find_playlists
-     playlists.any? { |playlist| playlist[:name] == params[:playlist_name] }
+  def playlists_include_new_playlist?
+    playlists = find_playlists
+    playlists.any? { |playlist| playlist[:name] == params[:playlist_name] }
   end
 
   def find_playlists
-    @playlists ||= spotify_service.find_user_playlists
+    @find_playlists ||= spotify_service.find_user_playlists
   end
 
   def spotify_service

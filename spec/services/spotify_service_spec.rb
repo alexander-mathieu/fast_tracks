@@ -60,13 +60,13 @@ describe SpotifyService do
     it '#create_user_playlist' do
       stub_data = File.read('./spec/fixtures/spotify_create_playlist.json')
 
-      stub_request(:post, "https://api.spotify.com/v1/users/rwkoa/playlists")
+      stub_request(:post, 'https://api.spotify.com/v1/users/rwkoa/playlists')
         .with(
-           body: "{\"name\":\"new playlist who dis\", \"public\":true}",
-           headers: {
-                   	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                   	  'Content-Type'=>'application/json'
-                    })
+          body: "{\"name\":\"new playlist who dis\", \"public\":true}",
+          headers: {
+                   	'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+                   	'Content-Type' => 'application/json'
+                   })
         .to_return(status: 200, body: stub_data)
 
       new_playlist = @spotify_service.create_user_playlist('rwkoa', 'new playlist who dis')

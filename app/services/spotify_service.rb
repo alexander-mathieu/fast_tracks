@@ -17,7 +17,7 @@ class SpotifyService
   end
 
   def find_user_playlists
-    get_json("https://api.spotify.com/v1/me/playlists")[:items]
+    get_json('https://api.spotify.com/v1/me/playlists')[:items]
   end
 
   def create_user_playlist(spotify_user_id, playlist_name)
