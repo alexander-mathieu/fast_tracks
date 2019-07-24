@@ -9,7 +9,6 @@ class SongSifter
 
   def sift_songs
     @songs_data.each do |song_hash|
-binding.pry
       attr_array = attr_grabber(song_hash)
       attrs = attr_hasher(attr_array)
       current_song = song_build(attrs)
