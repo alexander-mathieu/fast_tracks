@@ -19,7 +19,7 @@ class SongSifter
   def attr_grabber(song_hash)
     [song_hash[:played_at], song_hash[:track][:id],
      song_hash[:track][:name], song_hash[:track][:artists].first[:name],
-     song_hash[:track][:album][:name], song_hash[:track][:href],
+     song_hash[:track][:album][:name], song_hash[:track][:external_urls][:spotify],
      song_hash[:track][:album][:images].first[:url],
      song_hash[:track][:duration_ms]]
   end
