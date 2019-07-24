@@ -3,20 +3,28 @@ http_interactions:
 - request:
     method: post
 <<<<<<< HEAD
+<<<<<<< HEAD
     uri: https://api.spotify.com/v1/users/billyiii/playlists
 =======
     uri: https://api.spotify.com/v1/users/123456/playlists
 >>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
+=======
+    uri: https://api.spotify.com/v1/users/123456/playlists
+>>>>>>> ce108f08301dba9b012f889324b7a31af6acf5fc
     body:
       encoding: UTF-8
       string: '{"name":"New Jams", "public":true}'
     headers:
       Authorization:
 <<<<<<< HEAD
+<<<<<<< HEAD
       - Bearer 12345
 =======
       - Bearer 123456abcde
 >>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
+=======
+      - Bearer 123456abcde
+>>>>>>> ce108f08301dba9b012f889324b7a31af6acf5fc
       User-Agent:
       - Faraday v0.15.4
       Content-Type:
@@ -97,12 +105,17 @@ http_interactions:
           "uri" : "spotify:playlist:3yNGMCr1XusmizkMqqoj38"
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
     http_version:
   recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 =======
     http_version: 
   recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 >>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
+=======
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+>>>>>>> ce108f08301dba9b012f889324b7a31af6acf5fc
 - request:
     method: post
     uri: https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
@@ -154,12 +167,17 @@ http_interactions:
           "snapshot_id" : "MiwyNjVjNWMxYmQxNzNmMzkxZDZkZDdjMzIzM2NhODcxNjk0YjBjNDYw"
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
     http_version:
   recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 =======
     http_version: 
   recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 >>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
+=======
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+>>>>>>> ce108f08301dba9b012f889324b7a31af6acf5fc
 - request:
     method: get
     uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
@@ -203,10 +221,15 @@ http_interactions:
 
 '
 <<<<<<< HEAD
+<<<<<<< HEAD
     http_version:
   recorded_at: Tue, 23 Jul 2019 19:45:29 GMT
 =======
     http_version: 
   recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
 >>>>>>> fc8f1fd7e6da45bc8524af4e98d47692b68d3a9a
+=======
+    http_version: 
+  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+>>>>>>> ce108f08301dba9b012f889324b7a31af6acf5fc
 recorded_with: VCR 5.0.0
