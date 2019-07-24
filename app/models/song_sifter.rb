@@ -9,10 +9,11 @@ class SongSifter
 
   def sift_songs
     @songs_data.each do |song_hash|
+binding.pry
       attr_array = attr_grabber(song_hash)
       attrs = attr_hasher(attr_array)
       current_song = song_build(attrs)
-      user_song_build(current_song.id, current_song.played_at)
+      user_song_build(current_song.id, song_hash[:played_at])  
     end
   end
 
