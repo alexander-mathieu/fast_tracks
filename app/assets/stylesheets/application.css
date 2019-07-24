@@ -1,3 +1,13 @@
+canvas {
+  width: 100% !important;
+  max-width: 400px;
+  height: auto !important;
+}
+
+.pr-chart, h3 {
+  color: #FF0000
+}
+
 body {
 	font-family: 'Muli', sans-serif;
 }
