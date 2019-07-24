@@ -12,8 +12,7 @@ class SongSifter
       attr_array = attr_grabber(song_hash)
       attrs = attr_hasher(attr_array)
       current_song = song_build(attrs)
-      playtime = (Time.parse(attrs[:played_at]).to_f * 1000).to_s
-      user_song_build(current_song.id, playtime)
+      user_song_build(current_song.id, current_song.played_at)
     end
   end
 
@@ -28,8 +27,8 @@ class SongSifter
   def attr_hasher(attr_grab_arry)
     { played_at: attr_grab_arry[0], spotify_id: attr_grab_arry[1],
       title: attr_grab_arry[2], artist: attr_grab_arry[3],
-      album: attr_grab_arry[4], album_art_url: attr_grab_arry[5],
-      spotify_url: attr_grab_arry[6], length:  attr_grab_arry[7] }
+      album: attr_grab_arry[4], album_art_url: attr_grab_arry[6],
+      spotify_url: attr_grab_arry[5], length:  attr_grab_arry[7] }
   end
 
   def song_build(attrs)
