@@ -61,7 +61,7 @@
                 <section class='playlist-export'>
                   <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
                     <%= text_field_tag :playlist_name, nil, placeholder: 'Playlist name' %>
-                    <%= submit_tag 'Create Playlist', class: 'btn btn-success' %>
+                    <%= submit_tag 'Create or Update Playlist', class: 'btn btn-success' %>
                   <% end %>
                 </section>
                 <% cache cache_key_for(Song, "recommended-song") do %>
