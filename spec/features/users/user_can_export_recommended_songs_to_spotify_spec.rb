@@ -30,7 +30,7 @@ RSpec.describe 'As a registered user' do
       within '.recommended-songs' do
         within '.playlist-export' do
           expect(page).to have_field :playlist_name
-          expect(page).to have_button 'Create Playlist'
+          expect(page).to have_button 'Create or Update Playlist'
         end
       end
     end
@@ -40,7 +40,7 @@ RSpec.describe 'As a registered user' do
         fill_in :playlist_name, with: 'New Jams'
 
         VCR.use_cassette 'export_spotify_playlist' do
-          click_button 'Create Playlist'
+          click_button 'Create or Update Playlist'
         end
 
         expect(current_path).to eq(dashboard_path)
