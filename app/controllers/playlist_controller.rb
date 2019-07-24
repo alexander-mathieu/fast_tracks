@@ -28,12 +28,12 @@ class PlaylistController < ApplicationController
   end
 
   def playlists_include?(playlist_name)
-     playlists = find_playlists(current_user.spotify_uid, params[:playlist_name])
+     playlists = find_playlists
      playlists.any? { |playlist| playlist[:name] == params[:playlist_name] }
   end
 
-  def find_playlists(spotify_user_id, playlist_name)
-    @playlists ||= spotify_service.find_user_playlists(spotify_user_id, playlist_name)
+  def find_playlists
+    @playlists ||= spotify_service.find_user_playlists
   end
 
   def spotify_service
