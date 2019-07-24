@@ -1,6 +1,520 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://api.spotify.com/v1/users/123456/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 123456abcde
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-ImE3MzcyZDcwYmVlNDg3ZmRhZWFiMjUyYmQ2YmQ5Zjk0Ig=="'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Date:
+      - Wed, 24 Jul 2019 17:23:47 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/users/123456/playlists?offset=0&limit=20",
+          "items" : [ {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/1kFqAJiFZWyNHjSRvR2Ttv"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv",
+            "id" : "1kFqAJiFZWyNHjSRvR2Ttv",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://mosaic.scdn.co/640/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://mosaic.scdn.co/300/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 300
+            }, {
+              "height" : 60,
+              "url" : "https://mosaic.scdn.co/60/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 60
+            } ],
+            "name" : "EXO",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MTYsZGJjZTE4ZTRkM2VlOTQ4OTEzNDJiZWE0ZWY3OWQ2OWMzNzk3YmZlYQ==",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv/tracks",
+              "total" : 15
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:1kFqAJiFZWyNHjSRvR2Ttv"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/09pAygmvlzxNqBKWuvTnpZ"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ",
+            "id" : "09pAygmvlzxNqBKWuvTnpZ",
+            "images" : [ ],
+            "name" : "New Playlist",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSwyNTE0NzgwMmI0N2EwYWMwNzllYzlmOWEwOTAwYTkzMzNkODI1NjEw",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:09pAygmvlzxNqBKWuvTnpZ"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/4AqWjpjLlEzq3w1bsJyGeR"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR",
+            "id" : "4AqWjpjLlEzq3w1bsJyGeR",
+            "images" : [ {
+              "height" : null,
+              "url" : "https://pl.scdn.co/images/pl/default/04003f7e04616b4d7bfbd14771439af024773096",
+              "width" : null
+            } ],
+            "name" : "Eminem All Songs ",
+            "owner" : {
+              "display_name" : "veetimusmaximus",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/veetimusmaximus"
+              },
+              "href" : "https://api.spotify.com/v1/users/veetimusmaximus",
+              "id" : "veetimusmaximus",
+              "type" : "user",
+              "uri" : "spotify:user:veetimusmaximus"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MjI4LDY0MzJmYzY1ODY4Mjg2YTFhMjc2ZDdhNmE2OTc1ZDAxYzBlYmRjZTQ=",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR/tracks",
+              "total" : 201
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:4AqWjpjLlEzq3w1bsJyGeR"
+          } ],
+          "limit" : 20,
+          "next" : null,
+          "offset" : 0,
+          "previous" : null,
+          "total" : 3
+        }
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:23:46 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/users/123456/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 123456abcde
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-ImE3MzcyZDcwYmVlNDg3ZmRhZWFiMjUyYmQ2YmQ5Zjk0Ig=="'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Date:
+      - Wed, 24 Jul 2019 17:24:12 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/users/123456/playlists?offset=0&limit=20",
+          "items" : [ {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/1kFqAJiFZWyNHjSRvR2Ttv"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv",
+            "id" : "1kFqAJiFZWyNHjSRvR2Ttv",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://mosaic.scdn.co/640/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://mosaic.scdn.co/300/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 300
+            }, {
+              "height" : 60,
+              "url" : "https://mosaic.scdn.co/60/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 60
+            } ],
+            "name" : "EXO",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MTYsZGJjZTE4ZTRkM2VlOTQ4OTEzNDJiZWE0ZWY3OWQ2OWMzNzk3YmZlYQ==",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv/tracks",
+              "total" : 15
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:1kFqAJiFZWyNHjSRvR2Ttv"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/09pAygmvlzxNqBKWuvTnpZ"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ",
+            "id" : "09pAygmvlzxNqBKWuvTnpZ",
+            "images" : [ ],
+            "name" : "New Playlist",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSwyNTE0NzgwMmI0N2EwYWMwNzllYzlmOWEwOTAwYTkzMzNkODI1NjEw",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:09pAygmvlzxNqBKWuvTnpZ"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/4AqWjpjLlEzq3w1bsJyGeR"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR",
+            "id" : "4AqWjpjLlEzq3w1bsJyGeR",
+            "images" : [ {
+              "height" : null,
+              "url" : "https://pl.scdn.co/images/pl/default/04003f7e04616b4d7bfbd14771439af024773096",
+              "width" : null
+            } ],
+            "name" : "Eminem All Songs ",
+            "owner" : {
+              "display_name" : "veetimusmaximus",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/veetimusmaximus"
+              },
+              "href" : "https://api.spotify.com/v1/users/veetimusmaximus",
+              "id" : "veetimusmaximus",
+              "type" : "user",
+              "uri" : "spotify:user:veetimusmaximus"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MjI4LDY0MzJmYzY1ODY4Mjg2YTFhMjc2ZDdhNmE2OTc1ZDAxYzBlYmRjZTQ=",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR/tracks",
+              "total" : 201
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:4AqWjpjLlEzq3w1bsJyGeR"
+          } ],
+          "limit" : 20,
+          "next" : null,
+          "offset" : 0,
+          "previous" : null,
+          "total" : 3
+        }
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:24:11 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/users/123456/playlists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 123456abcde
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-ImM2NGZmNTU4ZTA0OGJiMTZjYzk3YTY0OTRlOWU1MDIzIg=="'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Date:
+      - Wed, 24 Jul 2019 17:52:07 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/users/123456/playlists?offset=0&limit=20",
+          "items" : [ {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/2wbjgQRldpQzuyUkg5OuOX"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/2wbjgQRldpQzuyUkg5OuOX",
+            "id" : "2wbjgQRldpQzuyUkg5OuOX",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://mosaic.scdn.co/640/3f0a5ed1a16366954cae00d145d61cca29fd551b4458d18ed5d1a10e18b61cc04d8b1bfaf5027a4b9d34b3443925e72d13221c1745f16c7a015f850dc63d417007b291ac8877de3324cf1ca1f7b953a3",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://mosaic.scdn.co/300/3f0a5ed1a16366954cae00d145d61cca29fd551b4458d18ed5d1a10e18b61cc04d8b1bfaf5027a4b9d34b3443925e72d13221c1745f16c7a015f850dc63d417007b291ac8877de3324cf1ca1f7b953a3",
+              "width" : 300
+            }, {
+              "height" : 60,
+              "url" : "https://mosaic.scdn.co/60/3f0a5ed1a16366954cae00d145d61cca29fd551b4458d18ed5d1a10e18b61cc04d8b1bfaf5027a4b9d34b3443925e72d13221c1745f16c7a015f850dc63d417007b291ac8877de3324cf1ca1f7b953a3",
+              "width" : 60
+            } ],
+            "name" : "fast tracks",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "Miw1YWJiZDk0MzlhOTQwM2U2ZTg3NWVlYTIxYjk4ZDcwOGQ4N2Q1ZDkx",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/2wbjgQRldpQzuyUkg5OuOX/tracks",
+              "total" : 5
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:2wbjgQRldpQzuyUkg5OuOX"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/1kFqAJiFZWyNHjSRvR2Ttv"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv",
+            "id" : "1kFqAJiFZWyNHjSRvR2Ttv",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://mosaic.scdn.co/640/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://mosaic.scdn.co/300/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 300
+            }, {
+              "height" : 60,
+              "url" : "https://mosaic.scdn.co/60/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+              "width" : 60
+            } ],
+            "name" : "EXO",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MTYsZGJjZTE4ZTRkM2VlOTQ4OTEzNDJiZWE0ZWY3OWQ2OWMzNzk3YmZlYQ==",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv/tracks",
+              "total" : 15
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:1kFqAJiFZWyNHjSRvR2Ttv"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/09pAygmvlzxNqBKWuvTnpZ"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ",
+            "id" : "09pAygmvlzxNqBKWuvTnpZ",
+            "images" : [ ],
+            "name" : "New Playlist",
+            "owner" : {
+              "display_name" : "123456",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/123456"
+              },
+              "href" : "https://api.spotify.com/v1/users/123456",
+              "id" : "123456",
+              "type" : "user",
+              "uri" : "spotify:user:123456"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSwyNTE0NzgwMmI0N2EwYWMwNzllYzlmOWEwOTAwYTkzMzNkODI1NjEw",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:09pAygmvlzxNqBKWuvTnpZ"
+          }, {
+            "collaborative" : false,
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/4AqWjpjLlEzq3w1bsJyGeR"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR",
+            "id" : "4AqWjpjLlEzq3w1bsJyGeR",
+            "images" : [ {
+              "height" : null,
+              "url" : "https://pl.scdn.co/images/pl/default/04003f7e04616b4d7bfbd14771439af024773096",
+              "width" : null
+            } ],
+            "name" : "Eminem All Songs ",
+            "owner" : {
+              "display_name" : "veetimusmaximus",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/veetimusmaximus"
+              },
+              "href" : "https://api.spotify.com/v1/users/veetimusmaximus",
+              "id" : "veetimusmaximus",
+              "type" : "user",
+              "uri" : "spotify:user:veetimusmaximus"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MjI4LDY0MzJmYzY1ODY4Mjg2YTFhMjc2ZDdhNmE2OTc1ZDAxYzBlYmRjZTQ=",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR/tracks",
+              "total" : 201
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:4AqWjpjLlEzq3w1bsJyGeR"
+          } ],
+          "limit" : 20,
+          "next" : null,
+          "offset" : 0,
+          "previous" : null,
+          "total" : 4
+        }
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:52:06 GMT
+- request:
     method: post
     uri: https://api.spotify.com/v1/users/123456/playlists
     body:
@@ -27,11 +541,11 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38
+      - https://api.spotify.com/v1/playlists/3SoSEsRP1gXJUKWA6wsZQ2
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
-      - Accept, Authorization, Origin, Content-Type, Retry-After
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS, PUT, DELETE, PATCH
       Access-Control-Allow-Credentials:
@@ -39,7 +553,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Date:
-      - Tue, 23 Jul 2019 21:52:47 GMT
+      - Wed, 24 Jul 2019 17:52:08 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -53,31 +567,31 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/3yNGMCr1XusmizkMqqoj38"
+            "spotify" : "https://open.spotify.com/playlist/3SoSEsRP1gXJUKWA6wsZQ2"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38",
-          "id" : "3yNGMCr1XusmizkMqqoj38",
+          "href" : "https://api.spotify.com/v1/playlists/3SoSEsRP1gXJUKWA6wsZQ2",
+          "id" : "3SoSEsRP1gXJUKWA6wsZQ2",
           "images" : [ ],
           "name" : "New Jams",
           "owner" : {
-            "display_name" : "<SPOTIFY_UID>",
+            "display_name" : "123456",
             "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/<SPOTIFY_UID>"
+              "spotify" : "https://open.spotify.com/user/123456"
             },
-            "href" : "https://api.spotify.com/v1/users/<SPOTIFY_UID>",
-            "id" : "<SPOTIFY_UID>",
+            "href" : "https://api.spotify.com/v1/users/123456",
+            "id" : "123456",
             "type" : "user",
-            "uri" : "spotify:user:<SPOTIFY_UID>"
+            "uri" : "spotify:user:123456"
           },
           "primary_color" : null,
           "public" : true,
-          "snapshot_id" : "MSxmYTc3NWRjODI4NzVjZDQ3OWVhZWM5ZGRmMzk0NzlmNmNjODcxZjI4",
+          "snapshot_id" : "MSwzZTU4OTU4MzNhNDhlYzcxNzA0YWMxNDRmODM0MmNkMWM2NzQyMTMw",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/3SoSEsRP1gXJUKWA6wsZQ2/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -86,13 +600,13 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:3yNGMCr1XusmizkMqqoj38"
+          "uri" : "spotify:playlist:3SoSEsRP1gXJUKWA6wsZQ2"
         }
-    http_version: 
-  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:52:06 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/3yNGMCr1XusmizkMqqoj38/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
+    uri: https://api.spotify.com/v1/playlists/3SoSEsRP1gXJUKWA6wsZQ2/tracks?uris=spotify:track:6kbCH9kQoNzaEt1R1rizpR,spotify:track:5DhuSnYKmoHrzfEtLsQHwQ,spotify:track:19mIwfp2xMC7XSxOZi9o0W,spotify:track:1l2Cw5xbQZGsLUg1TJWUBu,spotify:track:1lk5lsz89OCNyh1gCLZSxB
     body:
       encoding: UTF-8
       string: ''
@@ -119,7 +633,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
-      - Accept, Authorization, Origin, Content-Type, Retry-After
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS, PUT, DELETE, PATCH
       Access-Control-Allow-Credentials:
@@ -127,7 +641,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '604800'
       Date:
-      - Tue, 23 Jul 2019 21:52:47 GMT
+      - Wed, 24 Jul 2019 17:52:08 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -138,10 +652,10 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "MiwyNjVjNWMxYmQxNzNmMzkxZDZkZDdjMzIzM2NhODcxNjk0YjBjNDYw"
+          "snapshot_id" : "Miw4MDU1ZjkxNDBlMjQyNzliMjJjOWMyNTU3MmFhNjJiYjBkNDhjMmY1"
         }
-    http_version: 
-  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:52:06 GMT
 - request:
     method: get
     uri: https://fast-tracks-flask.herokuapp.com/api/v1/recommended?limit=5&song_ids=2MIcpZ7MBeCUEVFDBqU7Ei,4v6dF5830rtgjYr0uov248,2SpLqYLZ5GQTFTDwA4xwGS,5fUZNS9QZXOg0aYjnIjr1H,0tuE3l1TPJ9tKG4w63kgtf
@@ -165,25 +679,24 @@ http_interactions:
       Server:
       - gunicorn/19.9.0
       Date:
-      - Tue, 23 Jul 2019 21:52:47 GMT
+      - Wed, 24 Jul 2019 17:52:08 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1383'
+      - '1351'
+      Access-Control-Allow-Origin:
+      - "*"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"album":"Jarvage, Vol. 1","album_art_url":"https://i.scdn.co/image/ab0abf5abc1b030b0349fb5b244422a2284f915a","artist":"Jarv","length":194500,"spotify_id":"1H0utYmwbHj2qwWMMbOuzm","spotify_url":"https://open.spotify.com/track/1H0utYmwbHj2qwWMMbOuzm","title":"Escargot"},{"album":"Knew
-        School","album_art_url":"https://i.scdn.co/image/12dd1280266c92be26e8eb11d54485c4293b2a73","artist":"Knowmads","length":223000,"spotify_id":"1Nig8tnYHCBaBz7FPIR763","spotify_url":"https://open.spotify.com/track/1Nig8tnYHCBaBz7FPIR763","title":"Smoker''s
-        Corner"},{"album":"20","album_art_url":"https://i.scdn.co/image/409a3bad6bfbd00b1b56375c7b2fefd66b82fd23","artist":"HYUKOH","length":194866,"spotify_id":"5NnNl71fwVkuB1M45CXvdb","spotify_url":"https://open.spotify.com/track/5NnNl71fwVkuB1M45CXvdb","title":"Wi
-        Ing Wi Ing \uc704\uc789\uc704\uc789"},{"album":"Genesis","album_art_url":"https://i.scdn.co/image/a9d5c67f4035c93aa0b80797424b8894b663c0f9","artist":"Domo
-        Genesis","length":174133,"spotify_id":"7KoX0myQwA6dc6yCX8R1wS","spotify_url":"https://open.spotify.com/track/7KoX0myQwA6dc6yCX8R1wS","title":"Wanderer"},{"album":"Dawn
-        of us","album_art_url":"https://i.scdn.co/image/1b34599a866419a250f221a5e660ba206d69a795","artist":"Jackson
-        Wang","length":179833,"spotify_id":"2NpKyrIlJOHszUS2cXpEMU","spotify_url":"https://open.spotify.com/track/2NpKyrIlJOHszUS2cXpEMU","title":"Dawn
-        of us"}]
+      string: '[{"album":"Ruin Your Party","album_art_url":"https://i.scdn.co/image/a3375c73f23393a82a2db5094f50d726acd5053a","artist":"Scotty
+        Sire","length":221706,"spotify_id":"4lYxJPxy3jMEADaFhtcWRV","spotify_url":"https://open.spotify.com/track/4lYxJPxy3jMEADaFhtcWRV","title":"Mister
+        Glassman"},{"album":"Eviction Notice","album_art_url":"https://i.scdn.co/image/30f153df3a700534a8de28b66a0ffcb2298e0d67","artist":"Wax","length":194305,"spotify_id":"30yke04Lc0cEz1trJwoBZU","spotify_url":"https://open.spotify.com/track/30yke04Lc0cEz1trJwoBZU","title":"Coins"},{"album":"3","album_art_url":"https://i.scdn.co/image/1ba258012c93fced9e14b630bf3b264cf40b8da9","artist":"half\u2022alive","length":195047,"spotify_id":"7DwaOIkZk8qLJKGX7XTF2l","spotify_url":"https://open.spotify.com/track/7DwaOIkZk8qLJKGX7XTF2l","title":"Tip
+        Toes"},{"album":"TELEVISION","album_art_url":"https://i.scdn.co/image/5ad6f5da98cb4cce553addc8b218817126495c4c","artist":"Zico","length":216514,"spotify_id":"7AeKlE60y1KOfSSiiAY3Wv","spotify_url":"https://open.spotify.com/track/7AeKlE60y1KOfSSiiAY3Wv","title":"ANTI"},{"album":"3","album_art_url":"https://i.scdn.co/image/1271916b540b0cefa30e14ec63778729e199e5d9","artist":"Jooyoung","length":239234,"spotify_id":"3dPq8oL9xLgHhMI1YXbPXk","spotify_url":"https://open.spotify.com/track/3dPq8oL9xLgHhMI1YXbPXk","title":"Wet
+        (feat.Superbee)"}]
 
 '
-    http_version: 
-  recorded_at: Tue, 23 Jul 2019 21:52:47 GMT
+    http_version:
+  recorded_at: Wed, 24 Jul 2019 17:52:07 GMT
 recorded_with: VCR 5.0.0
