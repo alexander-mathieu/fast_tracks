@@ -32,14 +32,7 @@ $(document).ready(function(){
 				for (i = 0; i < 5; i++) {
 					$('.recommended-iframe')[i].src = 'https://open.spotify.com/embed/track/' + new_recommended[i].spotify_id
 				}
-				//for var_i = 0 to new_recommended.length
-
-				//set the song of each source by index i
-				console.log("success!!")
      },
-     error: function (){
-				console.log("something wrong!!")
-     }
     });
   });
 });
