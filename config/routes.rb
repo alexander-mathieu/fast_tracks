@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'spotify/songs', to: 'spotify#index'
   post '/playlist', to: 'playlist#create'
 
-  get 'hooks/strava', to: 'hooks#strava'
+  post 'hooks/strava', to: 'hooks#strava'
 end
