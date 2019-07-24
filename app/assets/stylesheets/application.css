@@ -15,11 +15,22 @@
  */
 
 #spot-conn-link {
-	background-color: #f44336;
-	color: black;
-	border-radius: 1rem;
-	padding: 14px 25px;
-	text-align: center; 
-	text-decoration: underline;
-	display: inline-block;
-								}
+  background-color: #f44336;
+  color: black;
+  border-radius: 1rem;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+
+canvas {
+  width: 100% !important;
+  max-width: 400px;
+  height: auto !important;
+}
+
+.pr-chart, h3 {
+  color: #FF0000
+}

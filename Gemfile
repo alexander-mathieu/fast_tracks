@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'chartjs-ror'
 gem 'faraday', '~> 0.15.4'
 gem 'figaro', '~> 1.1'
 gem 'jquery-rails'
