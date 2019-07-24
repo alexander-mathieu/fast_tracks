@@ -60,10 +60,12 @@
                   <%= submit_tag 'Create Playlist', id: 'create-playlist', class: 'btn btn-success' %>
                 <% end %>
               </section>
-              <% facade.recommended_songs.each do |song| %>
-                <div class="song">
-                  <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </div>
+              <% cache cache_key_for(Song, "recommended-song") do %>
+                <% facade.recommended_songs.each do |song| %>
+                  <div class="song">
+                    <iframe src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  </div>
+                <% end %>
               <% end %>
           </section>
         <% end %>
