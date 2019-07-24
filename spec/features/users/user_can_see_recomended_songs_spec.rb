@@ -22,8 +22,8 @@ RSpec.describe 'As a user who has connected their Spotify account and' do
       expect(page).to have_content('Recommended Songs')
 
       within '.recommended-songs' do
-        expect(page).to have_selector('.song', count: 5)
-        within first('.song') do
+        expect(page).to have_selector('.recommended-song', count: 5)
+        within first('.recommended-song') do
           expect(page).to have_css('iframe')
         end
       end
