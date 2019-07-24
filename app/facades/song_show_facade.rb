@@ -24,6 +24,10 @@ class SongShowFacade
     }
   end
 
+  def average_power_ranking
+    UserSong.where(user: @user, song: @song).average(:power_ranking)
+  end
+
   private
 
   def data
