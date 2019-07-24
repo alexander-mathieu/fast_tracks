@@ -1,0 +1,119 @@
+{
+    "href": "https://api.spotify.com/v1/users/rwkoa/playlists?offset=0&limit=20",
+    "items": [
+        {
+            "collaborative": false,
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/1kFqAJiFZWyNHjSRvR2Ttv"
+            },
+            "href": "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv",
+            "id": "1kFqAJiFZWyNHjSRvR2Ttv",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/39fca28aa61a5266a4f1038367bcc35a545e7031594bb6fda34f07fe96da938135478baa8727889d9bc1f380c180ebee2339cbdcef864816aa8af232e20bed05bb268bf50f5be4c19ef245cc6131826c",
+                    "width": 60
+                }
+            ],
+            "name": "EXO",
+            "owner": {
+                "display_name": "rwkoa",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/rwkoa"
+                },
+                "href": "https://api.spotify.com/v1/users/rwkoa",
+                "id": "rwkoa",
+                "type": "user",
+                "uri": "spotify:user:rwkoa"
+            },
+            "primary_color": null,
+            "public": true,
+            "snapshot_id": "MTYsZGJjZTE4ZTRkM2VlOTQ4OTEzNDJiZWE0ZWY3OWQ2OWMzNzk3YmZlYQ==",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/1kFqAJiFZWyNHjSRvR2Ttv/tracks",
+                "total": 15
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:1kFqAJiFZWyNHjSRvR2Ttv"
+        },
+        {
+            "collaborative": false,
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/09pAygmvlzxNqBKWuvTnpZ"
+            },
+            "href": "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ",
+            "id": "09pAygmvlzxNqBKWuvTnpZ",
+            "images": [],
+            "name": "New Playlist",
+            "owner": {
+                "display_name": "rwkoa",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/rwkoa"
+                },
+                "href": "https://api.spotify.com/v1/users/rwkoa",
+                "id": "rwkoa",
+                "type": "user",
+                "uri": "spotify:user:rwkoa"
+            },
+            "primary_color": null,
+            "public": true,
+            "snapshot_id": "MSwyNTE0NzgwMmI0N2EwYWMwNzllYzlmOWEwOTAwYTkzMzNkODI1NjEw",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/09pAygmvlzxNqBKWuvTnpZ/tracks",
+                "total": 0
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:09pAygmvlzxNqBKWuvTnpZ"
+        },
+        {
+            "collaborative": false,
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/4AqWjpjLlEzq3w1bsJyGeR"
+            },
+            "href": "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR",
+            "id": "4AqWjpjLlEzq3w1bsJyGeR",
+            "images": [
+                {
+                    "height": null,
+                    "url": "https://pl.scdn.co/images/pl/default/04003f7e04616b4d7bfbd14771439af024773096",
+                    "width": null
+                }
+            ],
+            "name": "Eminem All Songs ",
+            "owner": {
+                "display_name": "veetimusmaximus",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/veetimusmaximus"
+                },
+                "href": "https://api.spotify.com/v1/users/veetimusmaximus",
+                "id": "veetimusmaximus",
+                "type": "user",
+                "uri": "spotify:user:veetimusmaximus"
+            },
+            "primary_color": null,
+            "public": true,
+            "snapshot_id": "MjI4LDY0MzJmYzY1ODY4Mjg2YTFhMjc2ZDdhNmE2OTc1ZDAxYzBlYmRjZTQ=",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/4AqWjpjLlEzq3w1bsJyGeR/tracks",
+                "total": 201
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:4AqWjpjLlEzq3w1bsJyGeR"
+        }
+    ],
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 3
+}
