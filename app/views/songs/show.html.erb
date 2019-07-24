@@ -13,7 +13,9 @@
   <p>Average PowerRanking: <%= (facade.average_power_ranking * 100).to_i %></p>
 </section>
 
-<section id='pr-chart'>
-  <h3>PowerRanking Over Time</h3>
-  <%= line_chart facade.chart_data, facade.chart_options %>
-</section>
+<% if facade.activity_count >=3 %>
+  <section id='pr-chart'>
+    <h3>PowerRanking Over Time</h3>
+    <%= line_chart facade.chart_data, facade.chart_options %>
+  </section>
+<% end %>
