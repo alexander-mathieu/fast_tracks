@@ -1,0 +1,39 @@
+{
+    "collaborative": false,
+    "description": null,
+    "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/5q5Wi8USpqUBwBa7MMb6MH"
+    },
+    "followers": {
+        "href": null,
+        "total": 0
+    },
+    "href": "https://api.spotify.com/v1/playlists/5q5Wi8USpqUBwBa7MMb6MH",
+    "id": "5q5Wi8USpqUBwBa7MMb6MH",
+    "images": [],
+    "name": "new playlist who dis",
+    "owner": {
+        "display_name": "rwkoa",
+        "external_urls": {
+            "spotify": "https://open.spotify.com/user/rwkoa"
+        },
+        "href": "https://api.spotify.com/v1/users/rwkoa",
+        "id": "rwkoa",
+        "type": "user",
+        "uri": "spotify:user:rwkoa"
+    },
+    "primary_color": null,
+    "public": true,
+    "snapshot_id": "MSw2MzE2NzY3N2RlYjU3ODhjNjYwNjFiNjljZDM0Y2JiNmNjOWYwMzI3",
+    "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/5q5Wi8USpqUBwBa7MMb6MH/tracks",
+        "items": [],
+        "limit": 100,
+        "next": null,
+        "offset": 0,
+        "previous": null,
+        "total": 0
+    },
+    "type": "playlist",
+    "uri": "spotify:playlist:5q5Wi8USpqUBwBa7MMb6MH"
+}
