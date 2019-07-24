@@ -7,3 +7,7 @@ body {
 	letter-spacing: 6px;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.recommended {
+	width: 100%;
+	margin: auto;
+}
