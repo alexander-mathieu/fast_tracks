@@ -36,6 +36,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'chartjs-ror'
 gem 'faraday', '~> 0.15.4'
 gem 'figaro', '~> 1.1'
+gem 'jquery-rails'
+gem 'rails-ujs'
 gem 'omniauth-strava-oauth2'
 
 group :development, :test do
