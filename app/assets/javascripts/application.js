@@ -15,8 +15,6 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
-//  var dataid = $(this).attr('data-id');
-//  var id = $(this).closest('.test').attr('id');
 
 $(document).ready(function(){
 	$("#refresh-recs").click(function(){
