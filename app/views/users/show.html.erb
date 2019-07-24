@@ -67,7 +67,7 @@
                 <% cache cache_key_for(Song, "recommended-song") do %>
                   <% facade.recommended_songs.each do |song| %>
                     <div class="recommended-song">
-                      <iframe class="recommended-iframe" src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                      <iframe class="recommended-iframe recommended" src="https://open.spotify.com/embed/track/<%= song[:spotify_id] %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
                   <% end %>
                 <% end %>
