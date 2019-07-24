@@ -43,7 +43,7 @@ describe 'As a fully connected user' do
       within '#song-info' do
         expect(page).to have_content(@song.artist)
         expect(page).to have_content(@song.album)
-        expect(page).to have_content("#{(seconds / 60).floor.to_s}:#{(seconds % 60) .floor.to_s.rjust(2, '0')}")
+        expect(page).to have_content("#{(seconds / 60).floor}:#{(seconds % 60).floor.to_s.rjust(2, '0')}")
         expect(page).to have_link('Listen on Spotify', href: @song.spotify_url)
       end
     end
