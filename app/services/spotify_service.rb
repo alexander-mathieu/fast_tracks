@@ -12,6 +12,10 @@ class SpotifyService
     get_json(url, params)
   end
 
+  def get_user_info
+    get_json('/v1/me')
+  end
+
   def create_user_playlist(spotify_user_id, playlist_name)
     post_playlist("/v1/users/#{spotify_user_id}/playlists", "{\"name\":\"#{playlist_name}\", \"public\":true}")
   end
