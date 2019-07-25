@@ -10,19 +10,21 @@ class DashboardShowFacade
   end
 
   def spotify_song_uris
-    recommended_songs.map { |song| 'spotify:track:' + song[:spotify_id] }.join(',')
+    recommended_songs.map { |song| 'spotify:track:' + song.spotify_id }.join(',')
   end
 
   def recommended_songs
     songs = @user.top_songs(5).map(&:spotify_id).join(',')
-    @recommended_songs ||= recommended_service.get_recommendations(songs)
+    @recommended_songs ||= recommended_service.get_recommendations(songs).map do |song|
+      RecommendedSong.new(song)
+    end
   end
-	
+
 	def recommended_api_url
     song_ids = @user.top_songs(5).map{|song| song.spotify_id}.join(',')
 		limit = "limit=5&"
 		limit + "song_ids=" + song_ids
-	end	
+	end
 
   def build_link
     link = 'https://accounts.spotify.com/authorize?'
