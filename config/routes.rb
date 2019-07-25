@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'spotify/songs', to: 'spotify#index'
   post '/playlist', to: 'playlist#create'
 
-	require 'sidekiq/web'
-	mount Sidekiq::Web => '/sidekiq'
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
