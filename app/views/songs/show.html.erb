@@ -1,21 +1,40 @@
-<h1 id='song-title'> <%= @song.title %> </h1>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <a href="<%= dashboard_path %>">
+    <img src="<%= image_url('fasttracks-logo.png') %>">
+  </a>
+  <h1 class="nav-title">FastTracks</h1>
+</nav>
+<section class="container main-content">
+  <div class="row align-items-center mt-4">
+    <div class="col-lg-4">
+      <img id="album-art" class="img-fluid rounded mb-4 mb-lg-0 album-art" src=<%= @song.album_art_url %> alt="fasttracks-logo">
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h4 id='song-title' class="card-title"><%= @song.title %></h4>
+        </div>
+        <div class="card-body">
+          <section id='song-info' class="card-text">
+            <p>Artist: <%= @song.artist %></p>
+            <p>Album: <%= @song.album %></p>
+            <p>Length: <%= @song.formatted_length %></p>
+            <%= link_to 'Listen on Spotify', @song.spotify_url %>
+          </section>
+          <section id='song-metrics'>
+            <p>Average PowerRanking: <%= (facade.average_power_ranking * 100).to_i %></p>
+          </section>
+        </div>
+      </div>
+    </div>
 
-<img id='album-art' src=<%= @song.album_art_url %>>
-
-<section id='song-info'>
-  <p>Artist: <%= @song.artist %></p>
-  <p>Album: <%= @song.album %></p>
-  <p>Length: <%= @song.formatted_length %></p>
-  <%= link_to 'Listen on Spotify', @song.spotify_url %>
+    <div class="col-lg-4">
+      <% if facade.activity_count >=3 %>
+        <section id='pr-chart'>
+          <h3>PowerRanking Over Time</h3>
+          <%= line_chart facade.chart_data, facade.chart_options %>
+        </section>
+      <% end %>
+    </div>
+  </div>
 </section>
-
-<section id='song-metrics'>
-  <p>Average PowerRanking: <%= (facade.average_power_ranking * 100).to_i %></p>
-</section>
-
-<% if facade.activity_count >=3 %>
-  <section id='pr-chart'>
-    <h3>PowerRanking Over Time</h3>
-    <%= line_chart facade.chart_data, facade.chart_options %>
-  </section>
-<% end %>

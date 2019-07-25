@@ -1,81 +1,77 @@
-<section class="row">
-  <div class="col-lg-12">
-    <section class="py-md-3">
-      <h1> <%= facade.user_name %>, Welcome to FastTracks </h1>
-    </section>
-    <section>
-      <% if current_user.spotify_token.nil? %>
-        <p>Please <%= link_to "Connect to Spotify",	facade.build_link %>
-         to get the full benefits of FastTracks.</p>
-      <% end %>
-    </section>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <a href="<%= dashboard_path %>">
+    <img src="<%= image_url('fasttracks-logo.png') %>">
+  </a>
+</nav>
+<section class="container main-content">
 
-    <% if current_user.spotify_token %>
-      <section>
-        <div class="d-inline-block">
-          <%= button_to "Sync My Strava Data", stravas_path, class: "btn btn-success" %>
-        </div>
-
-        <div class="d-inline-block">
-          <%= button_to "Get Songs", 'spotify/songs', method: :get, class: "btn btn-success" %>
-        </div>
+  <section class="row">
+    <div class="col-lg-12">
+      <section class="py-md-3">
+        <h1> <%= facade.user_name %>, Welcome to FastTracks </h1>
       </section>
-    <% end %>
+      <section>
+        <% if current_user.spotify_token.nil? %>
+          <p>Please <%= link_to "Connect to Spotify",	facade.build_link %>
+          to get the full benefits of FastTracks.</p>
+        <% end %>
+      </section>
 
-    <% if current_user.spotify_token %>
-      <div class="row">
-        <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
-          <h3>Top Songs</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Power Ranking</th>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Play Count</th>
-                <th>Last Played</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% cache cache_key_for(Song, "top_songs") do %>
-                <% facade.top_songs.each do |song| %>
-                  <div class="song">
-                    <tr>
-                      <th scope="row" class="song-power-index"><%= (song.avg_power_ranking * 100).to_i %></th>
-                      <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
-                      <td class="song-artist"><%= song.artist %></td>
-                      <td class="song-play-count"><%= song.play_count %></td>
-                      <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
-                    </tr>
-                  </div>
-                <% end %>
-              <% end %>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="col-lg-4 pt-md-5 pb-md-3">
-          <% if facade.top_songs.length > 4 %>
-            <section class="recommended-songs">
-              <h4>Recommended Songs</h4>
-                <section class='playlist-export'>
-                  <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
-                    <%= text_field_tag :playlist_name, nil, placeholder: 'Playlist name' %>
-                    <%= submit_tag 'Create or Update Playlist', class: 'btn btn-success' %>
-                  <% end %>
-                </section>
-                <% cache("recommended-songs", expires_in: 30.minutes) do %>
-                  <% facade.recommended_songs.each do |song| %>
-                    <div class="recommended-song">
-                      <iframe class="recommended-iframe" src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <% if current_user.spotify_token %>
+        <div class="row">
+          <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
+            <h3>Top Songs</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Power Ranking</th>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Play Count</th>
+                  <th>Last Played</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% cache cache_key_for(Song, "top_songs") do %>
+                  <% facade.top_songs.each do |song| %>
+                    <div class="song">
+                      <tr>
+                        <th scope="row" class="song-power-index"><%= (song.avg_power_ranking * 100).to_i %></th>
+                        <td class="song-title"><a href="<%= song_path(song.id) %>"><%= song.title %></a></td>
+                        <td class="song-artist"><%= song.artist %></td>
+                        <td class="song-play-count"><%= song.play_count %></td>
+                        <td class="song-last-played"><%= song.updated_at.strftime('%m/%d/%y') %></td>
+                      </tr>
                     </div>
                   <% end %>
                 <% end %>
-              <%= link_to "Refresh Recommended", dashboard_path, id: "refresh-recs", remote: true, :"data_api_params" => facade.recommended_api_url %>
-            </section>
-          <% end %>
-        </section>
-      </div>
-    <% end %>
-  </div>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="col-lg-4 pt-md-5 pb-md-3">
+            <% if facade.top_songs.length > 4 %>
+              <section class="recommended-songs">
+                <h4>Recommended Songs</h4>
+                  <section class='playlist-export'>
+                    <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
+                      <%= text_field_tag :playlist_name, nil, placeholder: 'Playlist name', class: 'form-control' %>
+                      <%= submit_tag 'Create or Update Playlist', class: 'btn btn-success w-100' %>
+                    <% end %>
+                  </section>
+                  <% cache("recommended-songs", expires_in: 30.minutes) do %>
+                    <% facade.recommended_songs.each do |song| %>
+                      <div class="recommended-song">
+                        <iframe class="recommended-iframe recommended" src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                      </div>
+                    <% end %>
+                  <% end %>
+                <%= link_to "Refresh Recommended", dashboard_path, id: "refresh-recs", remote: true, :"data_api_params" => facade.recommended_api_url %>
+              </section>
+            <% end %>
+          </section>
+        </div>
+      <% end %>
+    </div>
+  </section>
 </section>
