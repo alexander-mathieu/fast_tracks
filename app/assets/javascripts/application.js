@@ -15,6 +15,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
+//= require Chart.bundle.min
 
 $(document).ready(function(){
 	$("#refresh-recs").click(function(){
@@ -26,7 +27,7 @@ $(document).ready(function(){
      data : params,
      dataType: "json",
      success: function (new_recommended) {
-				var i 
+				var i;
 				for (i = 0; i < 5; i++) {
 					$('.recommended-iframe')[i].src = 'https://open.spotify.com/embed/track/' + new_recommended[i].spotify_id
 				}
