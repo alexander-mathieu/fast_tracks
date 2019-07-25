@@ -28,7 +28,7 @@ class DashboardShowFacade
     link = 'https://accounts.spotify.com/authorize?'
     client_pair = "client_id=#{ENV['SPOTIFY_CLIENT_ID']}&"
     code_pair = 'response_type=code&'
-    redirect_pair = 'redirect_uri=https://rocky-springs-29283.herokuapp.com/auth/spotify/callback&'
+    redirect_pair = "redirect_uri=#{ENV['SPOTIFY_REDIRECT_URL']}/auth/spotify/callback&"
     scope_pair = 'scope=user-read-recently-played,playlist-modify-public'
     link + client_pair + code_pair + redirect_pair + scope_pair
   end
