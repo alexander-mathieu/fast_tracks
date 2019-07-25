@@ -17,12 +17,18 @@ class DashboardShowFacade
     songs = @user.top_songs(5).map(&:spotify_id).join(',')
     @recommended_songs ||= recommended_service.get_recommendations(songs)
   end
+	
+	def recommended_api_url
+    song_ids = @user.top_songs(5).map{|song| song.spotify_id}.join(',')
+		limit = "limit=5&"
+		limit + "song_ids=" + song_ids
+	end	
 
   def build_link
     link = 'https://accounts.spotify.com/authorize?'
     client_pair = "client_id=#{ENV['SPOTIFY_CLIENT_ID']}&"
     code_pair = 'response_type=code&'
-    redirect_pair = 'redirect_uri=http://localhost:3000/auth/spotify/callback&'
+    redirect_pair = 'redirect_uri=https://rocky-springs-29283.herokuapp.com/&'
     scope_pair = 'scope=user-read-recently-played,playlist-modify-public'
     link + client_pair + code_pair + redirect_pair + scope_pair
   end

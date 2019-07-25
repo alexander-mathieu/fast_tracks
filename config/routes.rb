@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post '/playlist', to: 'playlist#create'
 
   post 'hooks/strava', to: 'hooks#strava'
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

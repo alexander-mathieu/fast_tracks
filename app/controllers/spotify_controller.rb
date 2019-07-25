@@ -12,8 +12,7 @@ class SpotifyController < ApplicationController
   end
 
   def index
-    songs_data = spotify_service.get_user_songs[:items]
-    SongSifter.new(songs_data, current_user).sift_songs
+    SongSyncJob.perform_later(current_user)
     flash[:success] = 'Spotify data synced!'
     redirect_to dashboard_path
   end
