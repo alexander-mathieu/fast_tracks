@@ -12,7 +12,7 @@ class SongSifter
       attr_array = attr_grabber(song_hash)
       attrs = attr_hasher(attr_array)
       current_song = song_build(attrs)
-      user_song_build(current_song.id, song_hash[:played_at])  
+      user_song_build(current_song.id, song_hash[:played_at])
     end
   end
 
