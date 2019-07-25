@@ -13,6 +13,10 @@ class StravaService
     get_json('activities')
   end
 
+  def get_user_activity(activity_id)
+    get_json("activities/#{activity_id}")
+  end
+
   def get_activity_streams(activity_id)
     params = { keys: 'time,grade_smooth,velocity_smooth' }
     get_json("activities/#{activity_id}/streams", params)

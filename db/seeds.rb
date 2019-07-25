@@ -1,5 +1,5 @@
-user1 = User.create!(strava_uid: 123456,
-  strava_firstname: 'Marge',
+user1 = User.create!(strava_uid: 44312407,
+  strava_firstname: 'Marge', 
   strava_lastname: 'Simpson',
   strava_token: '183e30867e8376afbe9fb6e81e0b56577fce478f')
 
