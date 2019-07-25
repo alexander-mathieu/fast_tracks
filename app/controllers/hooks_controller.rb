@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Top Level Documentation
 class HooksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -9,7 +12,7 @@ class HooksController < ApplicationController
     end
 
     challenge = params['hub.challenge']
-    render json: { 'hub.challenge':challenge }
+    render json: { 'hub.challenge': challenge }
   end
 
   private
