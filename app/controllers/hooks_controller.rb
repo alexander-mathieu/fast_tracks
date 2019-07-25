@@ -17,12 +17,12 @@ class HooksController < ApplicationController
   def create(activity)
     user = User.find_by(strava_uid: activity[:owner_id])
     strava = StravaService.new(user.strava_token)
+    spotify = SpotifyService.new(user.spotify_token)
     if save_activity(strava.get_user_activity(activity[:object_id]), user)
       response = strava.get_activity_streams(activity[:object_id])
       stream_data = stream_hash(response)
-      songs = JSON.parse(File.read('./spec/fixtures/spotify_user_songs.json'), symbolize_names: true)
-      
-      require 'pry'; binding.pry
+      songs = spotify.get_user_songs[:items]
+      SongSifter.new(songs, user).sift_songs
     end
   end
 
