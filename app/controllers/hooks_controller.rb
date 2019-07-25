@@ -17,7 +17,10 @@ class HooksController < ApplicationController
 
   def create(activity)
     hook_data = activity[:hook]
+    puts hook_data
     user = User.find_by(strava_uid: hook_data[:owner_id])
+    puts user.strava_uid
+    puts user.strava_token
     strava = StravaService.new(user.strava_token)
     save_activity(strava.get_user_activity(hook_data[:object_id]), user)
   end
