@@ -17,11 +17,12 @@ class SongSifter
   end
 
   def attr_grabber(song_hash)
-    [song_hash[:played_at], song_hash[:track][:id],
-     song_hash[:track][:name], song_hash[:track][:artists].first[:name],
-     song_hash[:track][:album][:name], song_hash[:track][:href],
-     song_hash[:track][:album][:images].first[:url],
-     song_hash[:track][:duration_ms]]
+    song_track = song_hash[:track]
+    [song_hash[:played_at], song_track[:id],
+     song_track[:name], song_track[:artists].first[:name],
+     song_track[:album][:name], song_track[:external_urls][:spotify],
+     song_track[:album][:images].first[:url],
+     song_track[:duration_ms]]
   end
 
   def attr_hasher(attr_grab_arry)

@@ -24,12 +24,46 @@ describe 'As a fully connected user' do
     end
 
     it 'Has a chart with all of the previous times I have listened to the song and the PR' do
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 1.0)
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 0.75)
+
       visit song_path(@song)
 
       within('#pr-chart') do
         expect(page).to have_content('PowerRanking Over Time')
         expect(page).to have_css('#chart-0')
       end
+    end
+
+    it 'has all of the information on that song' do
+      visit song_path(@song)
+
+      seconds = (@song.length / 1000.0)
+
+      within '#song-info' do
+        expect(page).to have_content(@song.artist)
+        expect(page).to have_content(@song.album)
+        expect(page).to have_content("#{(seconds / 60).floor}:#{(seconds % 60).floor.to_s.rjust(2, '0')}")
+        expect(page).to have_link('Listen on Spotify', href: @song.spotify_url)
+      end
+    end
+
+    it 'displays the average PowerRanking for that song' do
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 1.0)
+      create(:user_song, user_id: @user.id, song_id: @song.id, power_ranking: 0.75)
+
+      visit song_path(@song)
+
+      within '#song-metrics' do
+        expect(page).to have_content('Average PowerRanking: 75')
+      end
+    end
+
+    it 'does not display a graph if there are less than 3 activities attached' do
+      visit song_path(@song)
+
+      expect(page).to_not have_content('PowerRanking Over Time')
+      expect(page).to_not have_css('#chart-0')
     end
   end
 end
