@@ -2,7 +2,7 @@ class HooksController < ApplicationController
   skip_before_action :verify_authenticity_token
   # protect_from_forgery with: :null_session
   def strava
-    activity = JSON.parse(request.body, symbolize_names: true)
+    activity = JSON.parse(request.body.read, symbolize_names: true)
 
     if activity[:aspect_type] == 'create'
       create(activity)
