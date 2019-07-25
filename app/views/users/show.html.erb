@@ -32,7 +32,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% cache cache_key_for(Song, "top_songs-#{current_user.id}") do %>
+                <% cache cache_key_for(current_user.user_songs, "top_songs-#{current_user.id}") do %>
                   <% facade.top_songs.each do |song| %>
                     <div class="song">
                       <tr>
