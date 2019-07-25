@@ -18,18 +18,6 @@
       </section>
 
       <% if current_user.spotify_token %>
-        <section>
-          <div class="d-inline-block">
-            <%= button_to "Sync My Strava Data", stravas_path, class: "btn btn-success" %>
-          </div>
-
-          <div class="d-inline-block">
-            <%= button_to "Get Songs", 'spotify/songs', method: :get, class: "btn btn-success" %>
-          </div>
-        </section>
-      <% end %>
-
-      <% if current_user.spotify_token %>
         <div class="row">
           <section class="col-lg-8 top-songs pt-md-5 pb-md-3">
             <h3>Top Songs</h3>
