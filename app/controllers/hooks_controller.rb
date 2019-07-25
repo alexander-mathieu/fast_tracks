@@ -15,10 +15,10 @@ class HooksController < ApplicationController
   private
 
   def create(activity)
-    hook_data = activity[:hook]
+    # hook_data = activity[:hook]
     puts 'hook data'
-    puts hook_data[:owner_id]
-    user = User.find_by(strava_uid: hook_data[:owner_id])
+    # puts hook_data[:owner_id]
+    user = User.find_by(strava_uid: activity[:owner_id])
     puts 'user data'
     puts user.id
     strava = StravaService.new(user.strava_token)
