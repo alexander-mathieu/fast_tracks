@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'spotify/songs', to: 'spotify#index'
   post '/playlist', to: 'playlist#create'
 
+  post 'hooks/strava', to: 'hooks#strava'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 end

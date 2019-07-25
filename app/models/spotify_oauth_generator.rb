@@ -4,7 +4,7 @@
 class SpotifyOauthGenerator
   def initialize(code)
     @code = code
-    @redirect_uri = 'http://localhost:3000/auth/spotify/callback'
+    @redirect_uri = "#{ENV['SPOTIFY_REDIRECT_URL']}/auth/spotify/callback"
     @conn = Faraday.new('https://accounts.spotify.com/') do |faraday|
       faraday.adapter Faraday.default_adapter
     end
