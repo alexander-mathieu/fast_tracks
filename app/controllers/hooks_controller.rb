@@ -1,6 +1,6 @@
 class HooksController < ApplicationController
   skip_before_action :verify_authenticity_token
-  # protect_from_forgery with: :null_session
+
   def strava
     activity = JSON.parse(request.body.read, symbolize_names: true)
 
@@ -15,10 +15,27 @@ class HooksController < ApplicationController
   private
 
   def create(activity)
-    puts 'hook data'
     user = User.find_by(strava_uid: activity[:owner_id])
     strava = StravaService.new(user.strava_token)
-    save_activity(strava.get_user_activity(activity[:object_id]), user)
+    if save_activity(strava.get_user_activity(activity[:object_id]), user)
+      response = strava.get_activity_streams(activity[:object_id])
+      stream_data = stream_hash(response)
+      songs = JSON.parse(File.read('./spec/fixtures/spotify_user_songs.json'), symbolize_names: true)
+      
+      require 'pry'; binding.pry
+    end
+  end
+
+  def stream_hash(response)
+    smashed_hash = {}
+    i = 0
+    response[3][:data].map do |time|
+      smashed_hash[time] = {}
+      smashed_hash[time][response[0][:type]] = response[0][:data][i]
+      smashed_hash[time][response[1][:type]] = response[1][:data][i]
+      smashed_hash[time][response[2][:type]] = response[2][:data][i]
+      i += 1
+    end
   end
 
   def save_activity(activity, user)

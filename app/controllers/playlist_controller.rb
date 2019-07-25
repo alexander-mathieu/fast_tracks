@@ -7,7 +7,6 @@ class PlaylistController < ApplicationController
     else
       playlist = create_playlist(current_user.spotify_uid, params[:playlist_name])
     end
-
     spotify_service.add_songs_to_playlist(playlist[:id], params[:song_uris])
     flash[:success] = 'Playlist successfully added!'
     redirect_to dashboard_path
