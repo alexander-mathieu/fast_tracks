@@ -1,23 +1,39 @@
+html, body{
+	min-height:100%;
+}
 canvas {
   width: 100% !important;
   max-width: 400px;
   height: auto !important;
 }
-
-/* #pr-chart h3 {
-  color: #FF0000
-} */
-
 body {
 	font-family: 'Muli', sans-serif;
 }
 .title {
 	font-family: 'Faster One', cursive;
-	font-size: 3.5em;
+	font-size: 6.5vw;
 	letter-spacing: 6px;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .recommended {
 	width: 100%;
 	margin: auto;
+}
+nav img {
+	width: 4em;
+}
+.main-content {
+	margin-top: 90px
+}
+.album-art {
+	width: 100%;
+}
+.nav-title {
+	font-family: 'Faster One', cursive;
+	color: #ff0000;
+	letter-spacing: 6px;
+	text-shadow: -1px 0 #ffd600, 0 1px #ffd600, 1px 0 #ffd600, 0 -1px #ffd600;
+}
+#row {
+	display: flex;
 }
