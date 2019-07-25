@@ -46,6 +46,7 @@ class SongSifter
     UserSong.find_or_create_by!(played_at: played_at) do |user_song|
       user_song.user_id = @user.id
       user_song.song_id = song_id
+      user_song.power_ranking = rand(0.01..1.0).round(2)
     end
   end
 end
