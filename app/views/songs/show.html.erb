@@ -1,11 +1,21 @@
 <h1 id='song-title'> <%= @song.title %> </h1>
 
 <img id='album-art' src=<%= @song.album_art_url %>>
+
+<section id='song-info'>
+  <p>Artist: <%= @song.artist %></p>
+  <p>Album: <%= @song.album %></p>
+  <p>Length: <%= @song.formatted_length %></p>
+  <%= link_to 'Listen on Spotify', @song.spotify_url %>
+</section>
+
 <section id='song-metrics'>
-
+  <p>Average PowerRanking: <%= (facade.average_power_ranking * 100).to_i %></p>
 </section>
 
-<section id='pr-chart'>
-  <h3>PowerRanking Over Time</h3>
-  <%= line_chart facade.chart_data, facade.chart_options %>
-</section>
+<% if facade.activity_count >=3 %>
+  <section id='pr-chart'>
+    <h3>PowerRanking Over Time</h3>
+    <%= line_chart facade.chart_data, facade.chart_options %>
+  </section>
+<% end %>
