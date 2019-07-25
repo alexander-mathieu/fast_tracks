@@ -4,11 +4,11 @@ class HooksController < ApplicationController
     type = request.body['aspect_type']
 
     if type == 'create'
-      create(request.body['hook'])
+      create
     end
 
     challenge = params['hub.challenge']
-    # puts request.body
+    puts request.body
     render json: { 'hub.challenge':challenge }
   end
 
