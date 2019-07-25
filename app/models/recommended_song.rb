@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Top Level Class Documentation
 class RecommendedSong
   attr_reader :spotify_id
 
