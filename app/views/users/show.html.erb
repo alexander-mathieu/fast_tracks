@@ -54,15 +54,11 @@
               <section class="recommended-songs">
                 <h4>Recommended Songs</h4>
                   <section class='playlist-export'>
-                    <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), remote: true, method: :post do %>
-                      <%= text_field_tag :playlist_name, nil, placeholder: 'Playlist name', class: 'form-control' %>
-                      <%= submit_tag 'Create or Update Playlist', class: 'btn btn-success w-100' %>
-                    <% end %>
-                  </section>
                   <% cache("recommended-songs", expires_in: 30.minutes) do %>
                     <% facade.recommended_songs.each do |song| %>
                       <div class="recommended-song">
                         <iframe class="recommended-iframe recommended" src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <%= button_to 'Add to FastTracks Playlist', playlist_path(song_uris: song.spotify_uri) %>
                       </div>
                     <% end %>
                   <% end %>
