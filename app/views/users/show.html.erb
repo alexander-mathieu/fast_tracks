@@ -2,6 +2,7 @@
   <a href="<%= dashboard_path %>">
     <img src="<%= image_url('fasttracks-logo.png') %>">
   </a>
+  <h1 class="nav-title">FastTracks</h1>
 </nav>
 <section class="container main-content">
 
@@ -32,7 +33,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% cache cache_key_for(Song, "top_songs") do %>
+                <% cache cache_key_for(current_user.user_songs, "top_songs-#{current_user.id}") do %>
                   <% facade.top_songs.each do |song| %>
                     <div class="song">
                       <tr>
@@ -53,8 +54,7 @@
             <% if facade.top_songs.length > 4 %>
               <section class="recommended-songs">
                 <h4>Recommended Songs</h4>
-                  <section class='playlist-export'>
-                  <% cache("recommended-songs", expires_in: 30.minutes) do %>
+                  <% cache("recommended-songs-#{current_user.id}", expires_in: 30.minutes) do %>
                     <% facade.recommended_songs.each do |song| %>
                       <div class="recommended-song">
                         <iframe class="recommended-iframe recommended" src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>

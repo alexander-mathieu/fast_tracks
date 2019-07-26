@@ -29,8 +29,11 @@ describe 'As a fully connected user' do
 
       visit song_path(@song)
 
-      within('#pr-chart') do
+      within('.pr-header') do
         expect(page).to have_content('PowerRanking Over Time')
+      end
+
+      within('#pr-chart') do
         expect(page).to have_css('#chart-0')
       end
     end
