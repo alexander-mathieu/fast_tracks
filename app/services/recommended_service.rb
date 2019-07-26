@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 class RecommendedService
-  def initialize()
-  end
-
   def get_recommendations(songs)
-    params = {song_ids: songs, limit:5}
+    params = { song_ids: songs, limit: 5 }
     get_json('recommended', params)
   end
 
@@ -17,9 +14,6 @@ class RecommendedService
   end
 
   def conn
-    Faraday.new('https://fast-tracks-flask.herokuapp.com/api/v1/') do |f|
-      f.adapter Faraday.default_adapter
-    end
+    Faraday.new('https://fast-tracks-flask.herokuapp.com/api/v1/')
   end
-
 end

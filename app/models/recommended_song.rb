@@ -7,4 +7,8 @@ class RecommendedSong
   def initialize(data)
     @spotify_id = data[:spotify_id]
   end
+
+  def spotify_uri
+    'spotify:track:' + spotify_id
+  end
 end

@@ -20,8 +20,8 @@ class SpotifyService
     get_json('https://api.spotify.com/v1/me/playlists')[:items]
   end
 
-  def create_user_playlist(spotify_user_id, playlist_name)
-    post_playlist("/v1/users/#{spotify_user_id}/playlists", "{\"name\":\"#{playlist_name}\", \"public\":true}")
+  def create_fasttracks_playlist(spotify_user_id)
+    post_playlist("/v1/users/#{spotify_user_id}/playlists", "{\"name\":\"FastTracks\", \"public\":true}")
   end
 
   def add_songs_to_playlist(playlist_id, song_uris)
