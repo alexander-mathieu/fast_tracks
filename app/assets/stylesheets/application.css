@@ -16,7 +16,7 @@ body {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .recommended {
-	width: 100%;
+	width: 80%;
 	margin: auto;
 }
 nav img {
@@ -36,4 +36,15 @@ nav img {
 }
 #row {
 	display: flex;
+}
+.recommended-song {
+	height: 100px;
+}
+.add-single-form {
+	width: 15%;
+	height: 80%;
+}
+.add-single-btn{
+	width: 100%;
+	height: 100%;
 }
