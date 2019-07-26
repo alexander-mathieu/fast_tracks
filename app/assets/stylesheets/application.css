@@ -6,6 +6,21 @@ canvas {
   max-width: 400px;
   height: auto !important;
 }
+#pending-chart img {
+  width: 100% !important;
+  max-width: 400px;
+  height: auto !important;
+}
+#pending-chart div {
+	opacity: 0.25
+}
+#pending-chart p {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+	 text-align: center;
+}
 body {
 	font-family: 'Muli', sans-serif;
 }
