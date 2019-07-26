@@ -58,10 +58,14 @@
                     <% facade.recommended_songs.each do |song| %>
                       <div class="recommended-song">
                         <iframe class="recommended-iframe recommended" src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                        <%= button_to 'Add', playlist_path(song_uris: song.spotify_uri) %>
+                        <%= form_tag playlist_path(song_uris: song.spotify_uri), method: :post, class: "billys-class-here" do %>
+                          <%= submit_tag 'Add' %>
+                        <% end %>
                       </div>
                     <% end %>
-                    <%= button_to 'Add All', playlist_path(song_uris: facade.spotify_song_uris) %>
+                    <%= form_tag playlist_path(song_uris: facade.spotify_song_uris), method: :post, class: "billys-class-here" do %>
+                      <%= submit_tag 'Add All' %>
+                    <% end %>
                   <% end %>
                 <%= link_to "Refresh Recommended", dashboard_path, id: "refresh-recs", remote: true, :"data_api_params" => facade.recommended_api_url %>
               </section>
