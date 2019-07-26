@@ -27,18 +27,25 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-lg-4">
-      <% if facade.activity_count >=3 %>
         <div class="card">
           <div class="card-header pr-header">
-            <h4 id='song-title' class="card-title">PowerRanking Over Time</h4>
+            <h4 id='power-ranking-over-time' class="card-title">PowerRanking Over Time</h4>
           </div>
-          <section id='pr-chart'>
-            <%= line_chart facade.chart_data, facade.chart_options %>
-          </section>
+          <% if facade.activity_count >=3 %>
+            <section id='pr-chart'>
+              <%= line_chart facade.chart_data, facade.chart_options %>
+            </section>
+          <% else %>
+            <section id='pending-chart'>
+              <div id="chart-opacity-layer">
+                <img src="https://i.imgur.com/mnMN1uY.png" alt="Pending PR Chart">
+              </div>
+              <p>Get a couple more rides in and you'll have some stats!</p>
+            </section>
+          <% end %>
         </div>
-      <% end %>
     </div>
   </div>
 </section>

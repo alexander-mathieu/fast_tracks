@@ -62,10 +62,15 @@ describe 'As a fully connected user' do
       end
     end
 
-    it 'does not display a graph if there are less than 3 activities attached' do
+    it 'does not display a real graph if there are less than 3 activities attached' do
       visit song_path(@song)
 
-      expect(page).to_not have_content('PowerRanking Over Time')
+      expect(page).to have_content('PowerRanking Over Time')
+      within '#pending-chart' do
+        expect(page).to have_content("Get a couple more rides in and you'll have some stats!")
+        expect(page).to have_selector("img[src='https://i.imgur.com/mnMN1uY.png']")
+        expect(page).to have_css("div[id='chart-opacity-layer']")
+      end
       expect(page).to_not have_css('#chart-0')
     end
   end
