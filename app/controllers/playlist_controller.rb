@@ -8,7 +8,7 @@ class PlaylistController < ApplicationController
       playlist = create_fasttracks_playlist(current_user.spotify_uid)
     end
     spotify_service.add_songs_to_playlist(playlist[:id], params[:song_uris])
-    flash[:success] = 'Playlist successfully added!'
+    flash[:success] = 'Successfully added!'
     redirect_to dashboard_path
   end
 
