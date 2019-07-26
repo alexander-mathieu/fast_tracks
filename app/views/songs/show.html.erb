@@ -27,13 +27,17 @@
         </div>
       </div>
     </div>
-
+    
     <div class="col-lg-4">
       <% if facade.activity_count >=3 %>
-        <section id='pr-chart'>
-          <h3>PowerRanking Over Time</h3>
-          <%= line_chart facade.chart_data, facade.chart_options %>
-        </section>
+        <div class="card">
+          <div class="card-header">
+            <h4 id='song-title' class="card-title">PowerRanking Over Time</h4>
+          </div>
+          <section id='pr-chart'>
+            <%= line_chart facade.chart_data, facade.chart_options %>
+          </section>
+        </div>
       <% end %>
     </div>
   </div>
