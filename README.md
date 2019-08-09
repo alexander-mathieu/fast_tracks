@@ -4,7 +4,7 @@
 
 ## About
 
-Welcome to FastTracks! This is a [Turing School of Software & Design](https://turing.io) project completed by [Brennan Ayers](https://github.com/BrennanAyers), [Rob Stringer](https://github.com/Mycobee), [William Homer](https://github.com/WHomer) and [Alexander Mathieu](https://github.com/alexander-mathieu).
+Welcome to _FastTracks_! This is a [Turing School of Software & Design](https://turing.io) project completed by [Brennan Ayers](https://github.com/BrennanAyers), [Rob Stringer](https://github.com/Mycobee), [William Homer](https://github.com/WHomer) and [Alexander Mathieu](https://github.com/alexander-mathieu).
 
 FastTracks combines data from Strava and Spotify to deliver insights and music recommendations based on performance. Once users sync both their Strava and Spotify accounts, new activities are posted to FastTracks via a Strava webhook. The Spotify API is then queried to determined which songs where played during that activity, and matched to data from Strava to figure out the user's level of exertion during that song. All information is then averaged into a final 'power ranking' for each song, displayed to the user on the dashboard.
 
